@@ -9,4 +9,17 @@ html
     = stylesheet_link_tag 'application', media: 'all'
     = javascript_pack_tag 'application'
   body
-    = yield
+    header
+    .container.menu
+      nav
+        ul.menu_list
+          li.menu_el 
+            = link_to  "Главная", root_path 
+          li.menu_el 
+            = link_to  "О нас", about_index_path
+          li.menu_el 
+            = link_to  "Помощь", help_index_path
+    .container        
+      = yield
+    
+
