@@ -18,13 +18,6 @@ html
             = link_to_unless_current  "О нас", about_path, class: 'menu_link'
             = link_to_unless_current  "Помощь", help_path, class: 'menu_link'
 
-            / ul.menu_list
-            /   li.menu_el 
-            /       = link_to_unless_current  "Главная", root_path, class: 'menu_link'
-            /   li.menu_el 
-            /       = link_to_unless_current  "О нас", about_path, class: 'menu_link'
-            /   li.menu_el
-            /       = link_to_unless_current  "Помощь", help_path, class: 'menu_link'
         main        
           = yield
       .right_board
