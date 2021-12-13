@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  get 'help/index'
-  get 'about/index'
-  get 'events/index'
-  root 'events#index'
+  get 'help', to: 'help#index', as: 'help'
+  get 'about', to: 'about#index', as: 'about'
+  get 'events/index' 
+  root 'events#index' 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

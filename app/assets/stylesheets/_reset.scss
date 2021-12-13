@@ -16,7 +16,9 @@
 :active {
   outline: none;
 }
-
+a:visited {
+  color: inherit;
+}
 a:focus,
 a:active {
   outline: none;

@@ -9,17 +9,19 @@ html
     = stylesheet_link_tag 'application', media: 'all'
     = javascript_pack_tag 'application'
   body
-    header
-    .container.menu
-      nav
-        ul.menu_list
-          li.menu_el 
-            = link_to  "Главная", root_path 
-          li.menu_el 
-            = link_to  "О нас", about_index_path
-          li.menu_el 
-            = link_to  "Помощь", help_index_path
-    .container        
-      = yield
-    
+  .container.all
+    .center_board
+      header
+        nav
+          ul.menu_list
+            li.menu_el 
+                = link_to_unless_current  "Главная", root_path
+            li.menu_el 
+                = link_to_unless_current  "О нас", about_path
+            li.menu_el
+                = link_to_unless_current  "Помощь", help_path
+      main        
+        = yield
+    .right_board 
+      p Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum rerum asperiores esse ipsum nam illum autem doloribus provident similique. Esse quo repellendus obcaecati quidem maxime tenetur facere dolorum ab consequuntur excepturi magnam sapiente earum et voluptas facilis nobis dignissimos, eveniet soluta. Inventore numquam est voluptate! In sapiente officiis natus, itaque corrupti quam suscipit distinctio incidunt reprehenderit, sunt quasi. Eveniet officiis esse quo voluptate, veniam, neque incidunt itaque quis minus vero sequi deleniti voluptas odio! Earum, consequatur tempora id necessitatibus illo sint veniam temporibus rem odio tenetur quo dolore corrupti, blanditiis porro reiciendis dicta ullam numquam qui soluta culpa voluptas architecto?    
 
