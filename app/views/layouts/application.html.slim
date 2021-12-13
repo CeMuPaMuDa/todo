@@ -9,19 +9,33 @@ html
     = stylesheet_link_tag 'application', media: 'all'
     = javascript_pack_tag 'application'
   body
-  .container.all
-    .center_board
-      header
-        nav
-          ul.menu_list
-            li.menu_el 
-                = link_to_unless_current  "Главная", root_path
-            li.menu_el 
-                = link_to_unless_current  "О нас", about_path
-            li.menu_el
-                = link_to_unless_current  "Помощь", help_path
-      main        
-        = yield
-    .right_board 
-      p Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum rerum asperiores esse ipsum nam illum autem doloribus provident similique. Esse quo repellendus obcaecati quidem maxime tenetur facere dolorum ab consequuntur excepturi magnam sapiente earum et voluptas facilis nobis dignissimos, eveniet soluta. Inventore numquam est voluptate! In sapiente officiis natus, itaque corrupti quam suscipit distinctio incidunt reprehenderit, sunt quasi. Eveniet officiis esse quo voluptate, veniam, neque incidunt itaque quis minus vero sequi deleniti voluptas odio! Earum, consequatur tempora id necessitatibus illo sint veniam temporibus rem odio tenetur quo dolore corrupti, blanditiis porro reiciendis dicta ullam numquam qui soluta culpa voluptas architecto?    
+  .container
+    .all
+      .center_board
+        header
+          nav
+            = link_to_unless_current  "Главная", root_path, class: 'menu_link'
+            = link_to_unless_current  "О нас", about_path, class: 'menu_link'
+            = link_to_unless_current  "Помощь", help_path, class: 'menu_link'
+
+            / ul.menu_list
+            /   li.menu_el 
+            /       = link_to_unless_current  "Главная", root_path, class: 'menu_link'
+            /   li.menu_el 
+            /       = link_to_unless_current  "О нас", about_path, class: 'menu_link'
+            /   li.menu_el
+            /       = link_to_unless_current  "Помощь", help_path, class: 'menu_link'
+        main        
+          = yield
+      .right_board
+        .login
+          p.text_block 
+            | Тут будет кнопка регистрации и авторизации, либо краткая информация о пользователе (Логин, аватар, количество задач : открытых и завершенных)
+        p.text_block  
+          | Тут будет форма создания задачи.
+        p.text_block 
+          | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur, voluptate odio. Non quisquam reprehenderit consectetur exercitationem in esse nobis nostrum omnis eaque numquam laudantium expedita, quis asperiores, iusto doloribus inventore.
+    footer
+      p
+        | Все права защищены     
 
