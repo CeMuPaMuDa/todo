@@ -1,12 +1,12 @@
 # frozen_string_literal: true
 
 namespace :create do
-  desc 'Создание пользователя'
+  desc 'Создание подзадачи'
   task item: :environment do
     our_items = {
       title: FFaker::CheesyLingo.title,
       description: FFaker::CheesyLingo.sentence,
-      deadline: FFaker::Time.datetime
+      deadline: (Time.now + rand(1..12).month)
     }
 
     Item.create! our_items

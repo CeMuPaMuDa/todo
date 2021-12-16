@@ -1,12 +1,12 @@
 # frozen_string_literal: true
 
 namespace :create do
-  desc 'Создание пользователя'
+  desc 'Создание события'
   task event: :environment do
     our_events = {
       title: FFaker::CheesyLingo.title,
       description: FFaker::CheesyLingo.sentence,
-      deadline: FFaker::Time.datetime
+      deadline: (Time.now + rand(1..12).month)
     }
 
     Event.create! our_events

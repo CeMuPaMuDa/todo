@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 namespace :create do
-  desc 'Создание пользователя'
+  desc 'Создание роли'
   task role: :environment do
     our_roles = {
       name: FFaker::Internet.domain_word,
