@@ -15,6 +15,7 @@ gem 'webpacker', '~> 5.0'
 
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
+  gem 'ffaker', '~> 2.20'
 end
 
 group :development do
