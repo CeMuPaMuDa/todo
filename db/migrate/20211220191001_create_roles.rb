@@ -7,5 +7,7 @@ class CreateRoles < ActiveRecord::Migration[6.1]
       t.string :alias_name, comment: 'Псевдоним на рус.'
       t.timestamps
     end
+    add_column :users, :role_id, :integer, comment: 'Роль пользователя'
+    add_foreign_key :users, :roles
   end
 end

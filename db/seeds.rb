@@ -12,16 +12,17 @@ Event.destroy_all
 User.destroy_all
 Role.destroy_all
 
-roles = Role.create([
-                      { name: 'admin', alias_name: 'админ' },
-                      { name: 'user', alias_name: 'пользователь' }
-                    ])
+Role.create([
+{ name: 'admin', alias_name: 'админ' },
+{ name: 'user', alias_name: 'пользователь' }
+])
 
+roles = Role.all
 hash_users = 25.times.map do
   {
     name: FFaker::Internet.user_name[0..15],
     email: FFaker::Internet.free_email,
-    role: roles.sample
+    role_id: roles.sample.id
   }
 end
 
@@ -32,7 +33,7 @@ hash_events = 42.times.map do
     title: FFaker::CheesyLingo.title,
     description: FFaker::CheesyLingo.sentence,
     deadline: (Time.now + rand(1..1100).day),
-    user: users.sample
+    user_id: users.sample.id
   }
 end
 
@@ -43,7 +44,7 @@ hash_items = 250.times.map do
     title: FFaker::CheesyLingo.title,
     description: FFaker::CheesyLingo.sentence,
     deadline: (Time.now + rand(1..1100).day),
-    event: events.sample
+    event_id: events.sample.id
   }
 end
 
