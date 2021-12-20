@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_15_201456) do
+ActiveRecord::Schema.define(version: 2021_12_20_110147) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,8 @@ ActiveRecord::Schema.define(version: 2021_12_15_201456) do
     t.datetime "deadline", comment: "Дата и время завершения (по плану)"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_events_on_user_id"
   end
 
   create_table "items", comment: "Часть задачи(события)", force: :cascade do |t|
@@ -31,6 +33,8 @@ ActiveRecord::Schema.define(version: 2021_12_15_201456) do
     t.datetime "deadline", comment: "Дата и время завершения (по плану)"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "event_id"
+    t.index ["event_id"], name: "index_items_on_event_id"
   end
 
   create_table "roles", comment: "Роль пользователей", force: :cascade do |t|
@@ -46,8 +50,13 @@ ActiveRecord::Schema.define(version: 2021_12_15_201456) do
     t.boolean "active", default: true, comment: "Состояние пользователя: активен(true), забанен(false)"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "role_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["name"], name: "index_users_on_name", unique: true
+    t.index ["role_id"], name: "index_users_on_role_id"
   end
 
+  add_foreign_key "events", "users"
+  add_foreign_key "items", "events"
+  add_foreign_key "users", "roles"
 end
