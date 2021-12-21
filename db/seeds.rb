@@ -13,9 +13,9 @@ User.destroy_all
 Role.destroy_all
 
 Role.create([
-{ name: 'admin', alias_name: 'админ' },
-{ name: 'user', alias_name: 'пользователь' }
-])
+              { name: 'admin', alias_name: 'админ' },
+              { name: 'user', alias_name: 'пользователь' }
+            ])
 
 roles = Role.all
 hash_users = 25.times.map do
