@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_20_110147) do
+ActiveRecord::Schema.define(version: 2021_12_20_191001) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,9 +20,9 @@ ActiveRecord::Schema.define(version: 2021_12_20_110147) do
     t.text "description", comment: "Краткое описание задачи"
     t.boolean "completed", default: false, comment: "Завершена? Да (true) / Нет (false)"
     t.datetime "deadline", comment: "Дата и время завершения (по плану)"
+    t.bigint "user_id", comment: "Внешний ключ для связи с таблицей users"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "user_id"
     t.index ["user_id"], name: "index_events_on_user_id"
   end
 
@@ -31,9 +31,9 @@ ActiveRecord::Schema.define(version: 2021_12_20_110147) do
     t.text "description", comment: "Краткое описание подзадачи"
     t.boolean "completed", default: false, comment: "Завершена? Да (true) / Нет (false)"
     t.datetime "deadline", comment: "Дата и время завершения (по плану)"
+    t.bigint "event_id", comment: "Внешний ключ для связи с таблицей events"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "event_id"
     t.index ["event_id"], name: "index_items_on_event_id"
   end
 
@@ -50,7 +50,7 @@ ActiveRecord::Schema.define(version: 2021_12_20_110147) do
     t.boolean "active", default: true, comment: "Состояние пользователя: активен(true), забанен(false)"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "role_id"
+    t.integer "role_id", comment: "Роль пользователя"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["name"], name: "index_users_on_name", unique: true
     t.index ["role_id"], name: "index_users_on_role_id"

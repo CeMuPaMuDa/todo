@@ -12,6 +12,8 @@ class CreateItems < ActiveRecord::Migration[6.1]
                 comment: 'Завершена? Да (true) / Нет (false)'
       t.datetime :deadline,
                  comment: 'Дата и время завершения (по плану)'
+      t.references :event, foreign_key: true,
+                   comment: 'Внешний ключ для связи с таблицей events'
       t.timestamps
     end
   end
