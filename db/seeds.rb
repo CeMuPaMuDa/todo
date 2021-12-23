@@ -22,7 +22,7 @@ hash_users = 25.times.map do
   {
     name: FFaker::Internet.user_name[0..15],
     email: FFaker::Internet.free_email,
-    role_id: roles.sample.id
+    role: roles.sample
   }
 end
 
@@ -33,7 +33,7 @@ hash_events = 42.times.map do
     title: FFaker::CheesyLingo.title,
     description: FFaker::CheesyLingo.sentence,
     deadline: (Time.now + rand(1..1100).day),
-    user_id: users.sample.id
+    user: users.sample
   }
 end
 
@@ -44,7 +44,7 @@ hash_items = 250.times.map do
     title: FFaker::CheesyLingo.title,
     description: FFaker::CheesyLingo.sentence,
     deadline: (Time.now + rand(1..1100).day),
-    event_id: events.sample.id
+    event: events.sample
   }
 end
 
