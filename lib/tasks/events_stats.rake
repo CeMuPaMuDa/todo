@@ -7,14 +7,14 @@ namespace :events do
 
     uname.each do |usr|
       puts '--------------------------------------------'
-      print "Пользователь: #{usr}\n \n"
+      puts "Пользователь: #{usr}"
       ev = Event.where(user_id: User.where(name: usr).ids)
       ename = ev.reduce([]) { |arr, el| arr << el.title }.sort
-      print "Список дел: #{ename}, всего: #{ev.count}\n\n"
+      puts "Список дел: #{ename}, всего: #{ev.count}"
       ename.each do |evt|
-        print "     Делo: #{evt}\n"
+        puts "     Делo: #{evt}"
         im = Item.where(event_id: Event.where(title: evt).ids)
-        print "         Подпунктов у дела: #{im.count}\n\n"
+        puts "         Подпунктов у дела: #{im.count}\n\n"
       end
     end
   end
