@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :events
   get 'help', to: 'help#index', as: 'help'
   get 'about', to: 'about#index', as: 'about'
   get 'events/index' 

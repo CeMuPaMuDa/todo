@@ -2,33 +2,20 @@ doctype html
 html
   head
     title
-      | Todo
+      | TODO
     meta[name="viewport" content="width=device-width,initial-scale=1"]
     = csrf_meta_tags
     = csp_meta_tag
     = stylesheet_link_tag 'application', media: 'all'
     = javascript_pack_tag 'application'
   body
-  .container
-    .all
-      .center_board
-        header
-          nav
-            = link_to_unless_current  "Главная", root_path, class: 'menu_link'
-            = link_to_unless_current  "О нас", about_path, class: 'menu_link'
-            = link_to_unless_current  "Помощь", help_path, class: 'menu_link'
-
-        main        
-          = yield
-      .right_board
-        .login
-          p.text_block 
-            | Тут будет кнопка регистрации и авторизации, либо краткая информация о пользователе (Логин, аватар, количество задач : открытых и завершенных)
-        p.text_block  
-          | Тут будет форма создания задачи.
-        p.text_block 
-          | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur, voluptate odio. Non quisquam reprehenderit consectetur exercitationem in esse nobis nostrum omnis eaque numquam laudantium expedita, quis asperiores, iusto doloribus inventore.
-    footer
-      p
-        | Все права защищены     
-
+    .wrapper
+      header
+        nav
+          = link_to_unless_current  "Главная", root_path, class: 'nav_link'
+          = link_to_unless_current  "Помощь", help_path, class: 'nav_link'
+          = link_to_unless_current  "О нас", about_path, class: 'nav_link'
+      main
+        = yield
+      footer
+        p &copy; All rights reserved
