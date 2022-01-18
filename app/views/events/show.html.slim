@@ -2,19 +2,19 @@ p#notice = notice
 
 p
   strong Title:
-  = @event.title
+  =< @event.title
 p
   strong Description:
-  = @event.description
+  =< @event.description
 p
   strong Completed:
-  = @event.completed
+  =< @event.completed
 p
   strong Items:
   table
     - @event.items.order(:created_at).each_with_index do |item, i|
       tr
-        td = "#{i + 1}."
+        td => "#{i + 1}."
         td = item.title
 
 

@@ -1,19 +1,21 @@
-h1 Listing events
+h1.fs-1.text-center.text-info.bg-dark Listing events
 
-table
-  thead
-    tr
-      th
-      th
-      th
-
+table.table.table-dark.table-striped
   tbody
     - @events.each do |event|
       tr
-        td = link_to 'Show', event
-        td = link_to 'Edit', edit_event_path(event)
-        td = link_to 'Destroy', event, data: { confirm: 'Are you sure?' }, method: :delete
-
+        td 
+          p.badge.rounded-pill.bg-warning.text-dark
+            => event.items.size
+        td =< link_to event.title.truncate(80), event, class: 'link-info'
+        td
+          p.btn.btn-warning
+            =< link_to 'Edit', edit_event_path(event), class: 'link-info'
 br
+ul.flex_page.pagination.justify-content-start
+  li.page-item
+  = paginate @events, class: 'page-link'
+br
+p.btn.btn-success
+  = link_to 'New Event', new_event_path, class: 'link-warning'
 
-= link_to 'New Event', new_event_path
