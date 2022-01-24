@@ -62,11 +62,7 @@ ActiveRecord::Schema.define(version: 2022_01_18_165005) do
     t.string "last_sign_in_ip"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["name"], name: "index_users_on_name", unique: true
-<<<<<<< HEAD
-    t.index ["role_id"], name: "index_users_on_role_id"
-=======
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
->>>>>>> R2Lesson1
   end
 
   add_foreign_key "events", "users"
