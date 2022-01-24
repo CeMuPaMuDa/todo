@@ -13,13 +13,16 @@ gem 'jquery-rails'
 gem 'kaminari'
 gem 'pg', '~> 1.1'
 gem 'puma', '~> 5.0'
+gem 'pundit'
 gem 'rails', '~> 6.1.4', '>= 6.1.4.1'
+gem 'rails-i18n'
 gem 'sass-rails', '>= 6'
 gem 'slim-rails'
 gem 'webpacker', '~> 5.0'
 
 group :development, :test do
   gem 'ffaker', '~> 2.20'
+  gem 'letter_opener'
 end
 
 group :development do

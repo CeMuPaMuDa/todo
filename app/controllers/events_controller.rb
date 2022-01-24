@@ -2,14 +2,17 @@
 
 class EventsController < ApplicationController
   before_action :set_event, only: %i[show edit update destroy]
+  before_action :authenticate_user!
 
   # GET /events
   def index
-    @events = Event.includes(:items).page(params[:page]).per(10)
+    @events = policy_scope(Event).includes(:items).page(params[:page]).per(10)
   end
 
   # GET /events/1
-  def show; end
+  def show
+    authorize @event
+  end
 
   # GET /events/new
   def new
@@ -17,12 +20,14 @@ class EventsController < ApplicationController
   end
 
   # GET /events/1/edit
-  def edit; end
+  def edit
+    authorize @event
+  end
 
   # POST /events
   def create
-    @event = Event.new(event_params.merge(user: User.first))
-
+    @event = Event.new(event_params)
+    @event.user_id = current_user.id
     if @event.save
       redirect_to @event, notice: 'Event was successfully created.'
     else
@@ -32,6 +37,7 @@ class EventsController < ApplicationController
 
   # PATCH/PUT /events/1
   def update
+    authorize @event
     if @event.update(event_params)
       redirect_to @event, notice: 'Event was successfully updated.'
     else
@@ -42,6 +48,7 @@ class EventsController < ApplicationController
   # DELETE /events/1
   def destroy
     @event.destroy
+    authorize @event
     redirect_to events_url, notice: 'Event was successfully destroyed.'
   end
 
@@ -54,6 +61,6 @@ class EventsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def event_params
-    params.require(:event).permit(:title, :description, :completed, :user)
+    params.require(:event).permit(:title, :description, :completed)
   end
 end

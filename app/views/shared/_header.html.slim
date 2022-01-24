@@ -1,0 +1,17 @@
+header
+  nav.menu.navbar.navbar-dark.bg-dark
+    ul.menu-item
+      li.menu-list = link_to_unless_current  "Главная", root_path, class: 'nav_link'
+      li.menu-list = link_to_unless_current  "Помощь", help_path, class: 'nav_link'
+      li.menu-list = link_to_unless_current  "О нас", about_path, class: 'nav_link'
+    ul.menu-item
+      - if user_signed_in?
+        li.menu-list Hello, #{current_user.name}
+        li.menu-list = link_to 'Выход', destroy_user_session_path, method: :delete
+      - else 
+        li.menu-list = link_to 'Войти', new_user_session_path
+        li.menu-list = link_to 'Зарегистрироваться', new_user_registration_path
+        
+    
+    
+  
