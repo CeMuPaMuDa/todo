@@ -12,32 +12,37 @@ Event.destroy_all
 User.destroy_all
 Role.destroy_all
 
-Role.create([
-              { name: 'admin', alias_name: 'админ' },
-              { name: 'user', alias_name: 'пользователь' }
-            ])
+default_role = Role.create!(name: 'Пользователь', alias_name: :default_user)
+admin_role = Role.create!(name: 'Администратор', alias_name: :admin)
 
-roles = Role.all
+admin_email = 'admin@example.com'
+User.create!  email: admin_email,
+              password: admin_email,
+              name: 'Админ',
+              role: admin_role
+
 hash_users = 25.times.map do
+  email = FFaker::Internet.free_email
   {
     name: FFaker::Internet.user_name[0..15],
-    email: FFaker::Internet.free_email,
-    role: roles.sample
+    email: email,
+    password: email,
+    role: default_role
   }
 end
 
-users = User.create hash_users
+users = User.create! hash_users
 
 hash_events = 42.times.map do
   {
     title: FFaker::CheesyLingo.title,
-    description: FFaker::CheesyLingo.sentence,
+    description: FFaker::Lorem.paragraph,
     deadline: (Time.now + rand(1..1100).day),
     user: users.sample
   }
 end
 
-events = Event.create hash_events
+events = Event.create! hash_events
 
 hash_items = 250.times.map do
   {
@@ -48,4 +53,4 @@ hash_items = 250.times.map do
   }
 end
 
-Item.create hash_items
+Item.create! hash_items

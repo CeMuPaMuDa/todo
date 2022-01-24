@@ -4,6 +4,7 @@ require "active_model/railtie"
 require "active_job/railtie"
 require "active_record/railtie"
 require "action_controller/railtie"
+require "action_mailer/railtie"
 require "action_view/railtie"
 require "sprockets/railtie"
 
@@ -13,7 +14,9 @@ module Todo
   class Application < Rails::Application
 
     config.load_defaults 6.1
-
+    config.i18n.available_locales = %i[en ru]
+    config.i18n.default_locale = :ru
+    config.time_zone = 'Kyiv'
     config.eager_load_paths += Dir["#{config.root}/lib/**/"]
 
     config.generators do |g|
