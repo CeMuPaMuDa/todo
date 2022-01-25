@@ -54,6 +54,7 @@ module Admin
     # DELETE /admin/users/1
     def destroy
       authorize [:admin, @admin_user]
+      @admin_user.destroy
       redirect_to admin_users_url, notice: 'User was successfully destroyed.'
     end
 
