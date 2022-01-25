@@ -1,28 +1,32 @@
-class Admin::RolesController < ApplicationController
+class Admin::RolesController < Admin::ApplicationController
   before_action :set_admin_role, only: [:show, :edit, :update, :destroy]
 
   # GET /admin/roles
   def index
+    authorize [:admin, Role]
     @admin_roles = Role.all
   end
 
   # GET /admin/roles/1
   def show
+    authorize [:admin, @admin_roles]
   end
 
   # GET /admin/roles/new
   def new
     @admin_role = Admin::Role.new
+    authorize [:admin, @admin_roles]
   end
 
   # GET /admin/roles/1/edit
   def edit
+    authorize [:admin, @admin_roles]
   end
 
   # POST /admin/roles
   def create
     @admin_role = Admin::Role.new(admin_role_params)
-
+    authorize [:admin, @admin_roles]
     if @admin_role.save
       redirect_to @admin_role, notice: 'Role was successfully created.'
     else
@@ -32,6 +36,7 @@ class Admin::RolesController < ApplicationController
 
   # PATCH/PUT /admin/roles/1
   def update
+    authorize [:admin, @admin_roles]
     if @admin_role.update(admin_role_params)
       redirect_to @admin_role, notice: 'Role was successfully updated.'
     else
@@ -41,6 +46,7 @@ class Admin::RolesController < ApplicationController
 
   # DELETE /admin/roles/1
   def destroy
+    authorize [:admin, @admin_roles]
     @admin_role.destroy
     redirect_to admin_roles_url, notice: 'Role was successfully destroyed.'
   end
