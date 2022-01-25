@@ -1,0 +1,11 @@
+ul.menu-item
+  - if user_signed_in?
+    li.menu-list Hello, #{current_user.name}
+    li.menu-list = link_to 'Выход', destroy_user_session_path, method: :delete
+    - if current_user.default_user?
+      li.menu-list = link_to 'Редактировать профиль', edit_user_registration_path
+    - else 
+      li.menu-list = link_to 'Панель администратора', admin_root_path
+  - else 
+    li.menu-list = link_to 'Войти', new_user_session_path
+    li.menu-list = link_to 'Зарегистрироваться', new_user_registration_path
