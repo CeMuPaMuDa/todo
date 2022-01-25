@@ -3,7 +3,7 @@ class Admin::RolesController < ApplicationController
 
   # GET /admin/roles
   def index
-    @admin_roles = Admin::Role.all
+    @admin_roles = Role.all
   end
 
   # GET /admin/roles/1

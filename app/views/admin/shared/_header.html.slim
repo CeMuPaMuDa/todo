@@ -1,0 +1,5 @@
+header 
+  nav.menu.navbar.navbar-dark.bg-info
+    ul.menu-item
+      li.menu-list = link_to_unless_current  "Пользователи", admin_root_path
+      li.menu-list = link_to_unless_current  "Роли", admin_roles_path
