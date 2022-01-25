@@ -5,7 +5,7 @@ module Admin
     def index?
       user.admin?
     end
-    
+
     def destroy?
       user.admin? && user.id != record.id
     end

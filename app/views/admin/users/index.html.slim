@@ -21,6 +21,10 @@ table.table.table-dark.table-striped
 
 br
 br
+ul.flex_page.pagination.justify-content-start
+  li.page-item
+  = paginate @admin_users, class: 'page-link'
+br
 p.btn.btn-success
   = link_to 'New User', new_admin_user_path, class: 'link-warning'
 

@@ -1,4 +1,5 @@
-module Services
+# frozen_string_literal: true
+
 class EventsScopeService
   attr_reader :user, :scope
 
@@ -14,5 +15,4 @@ class EventsScopeService
   def call
     user.admin? ? scope.all : scope.where(user: user)
   end
-end
 end

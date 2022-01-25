@@ -15,7 +15,7 @@ class EventPolicy < ApplicationPolicy
 
   class Scope < Scope
     def resolve
-      Services::EventsScopeService.call(user, scope)
+      EventsScopeService.call(user, scope)
     end
   end
 end
