@@ -2,15 +2,8 @@ h1.fs-1.text-center.text-info.bg-dark Список событий
 
 table.table.table-dark.table-striped
   tbody
-    - @events.each do |event|
-      tr
-        td 
-          p.badge.rounded-pill.bg-warning.text-dark
-            => event.items.size
-        td =< link_to event.title.truncate(80), event, class: 'link-info'
-        td
-          = link_to content_tag('span', '', class: 'fas fa-feather text-info'),
-            edit_event_path(event)
+    = render partial: 'event', collection: @events
+
 br
 ul.flex_page.pagination.justify-content-start
   li.page-item
