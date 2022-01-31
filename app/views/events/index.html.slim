@@ -9,8 +9,8 @@ table.table.table-dark.table-striped
             => event.items.size
         td =< link_to event.title.truncate(80), event, class: 'link-info'
         td
-          p.btn.btn-warning
-            =< link_to 'Edit', edit_event_path(event), class: 'link-info'
+          = link_to content_tag('span', '', class: 'fas fa-feather text-info'),
+            edit_event_path(event)
 br
 ul.flex_page.pagination.justify-content-start
   li.page-item

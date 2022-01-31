@@ -3,8 +3,6 @@
 module Admin
   class UsersController < Admin::ApplicationController
     before_action :set_admin_user, only: %i[show edit update destroy]
-    # after_action :verify_authorized, except: :index
-    # after_action :verify_policy_scoped, only: :index
 
     # GET /admin/users
     def index
@@ -12,7 +10,7 @@ module Admin
       @admin_users = policy_scope(
         User,
         policy_scope_class: Admin::UserPolicy::Scope
-      ).includes(:roles).page(params[:page]).per(7)
+      ).includes(:role).page(params[:page]).per(7)
     end
 
     # GET /admin/users/1
