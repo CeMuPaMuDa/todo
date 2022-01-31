@@ -32,6 +32,7 @@ footer {
   justify-content: space-between;
   color: white;
 }
+
 .navbar {
   margin: 15px;
 }
@@ -63,4 +64,21 @@ footer {
   padding: 15px;
   background: linear-gradient(320.84deg, #000000 20.07%, #040c51 96.22%);
   border-radius: 15px;
+}
+
+.first-list{
+  position: relative;
+}
+.first-list>li:hover .second-list{
+  display: block;
+}
+.second-list{
+  display: none;
+  position: absolute;
+  left: 80px;
+  top: 0;
+}
+.second-list>li{
+  background-color: rgb(255, 255, 255);
+  padding: 2px;
 }

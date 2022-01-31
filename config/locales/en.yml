@@ -1,4 +1,7 @@
 en:
+  en: English
+  ru: Russian
+  uk: Ukrainian
   copy: 'All rights reserved'
   activerecord:
     errors:
