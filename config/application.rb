@@ -17,8 +17,7 @@ module Todo
     config.i18n.available_locales = %i[en ru uk]
     config.i18n.default_locale = :ru
     config.time_zone = 'Kyiv'
-    config.eager_load_paths += Dir["#{config.root}/lib/**/",
-                                  "#{config.root}/config/locales/**/"]
+    config.eager_load_paths += Dir["#{config.root}/lib/**/"]
     config.generators do |g|
       g.orm              :active_record
       g.template_engine  :slim
