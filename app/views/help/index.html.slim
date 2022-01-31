@@ -1,10 +1,11 @@
-h1.main_heading Помощь
+h1.fs-1.text-center.text-info.bg-dark
+  = t('text.header.help')
 p
   | Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem incidunt ex blanditiis consequuntur soluta nam non impedit quasi consequatur repudiandae quod ut sint natus iste iure exercitationem deleniti, dicta velit mollitia nisi qui similique, voluptate vel! Quidem quo, autem aliquam aspernatur pariatur tempora hic enim nam alias ad perferendis placeat fugit voluptates vero esse quod officia quaerat deleniti amet cumque modi libero earum laboriosam! Alias nemo maiores iusto voluptas inventore ullam omnis? Mollitia sapiente consequatur doloribus cumque! Quisquam provident asperiores mollitia voluptatibus aspernatur nam dignissimos assumenda sapiente cumque debitis eos doloribus optio excepturi facere laborum amet architecto fugit nostrum, est culpa ipsam recusandae corrupti! Iste corporis qui rerum est nostrum, amet sequi incidunt. Quasi vitae delectus possimus quibusdam, vero itaque laborum eos incidunt aut? Laborum aspernatur sint voluptate repudiandae natus? Pariatur, architecto nesciunt voluptas rem sunt explicabo dolorum exercitationem iste deserunt mollitia minima, deleniti consequuntur maxime voluptatibus repellat, ducimus facilis. Delectus, itaque optio? Labore, amet. Et possimus porro quis ducimus architecto commodi placeat cum illum, neque, aperiam corrupti nulla, vero sapiente voluptatum rem. Sunt ut provident laudantium culpa commodi fuga ducimus officiis explicabo quo, esse tenetur at. Quidem, doloribus unde laudantium reiciendis harum quae vitae nobis dolores impedit quibusdam quas!
     
 .btn-group aria-label=("Basic mixed styles example") role="group" 
   button.btn.btn-warning.text-info  type="button"
-    = link_to  "Главная", root_path
+    = link_to t('pages.main_page'), root_path
   button.btn.btn-light type="button"
-    = link_to  "Помощь", about_path
+    = link_to  t('pages.about'), about_path
 
