@@ -3,7 +3,7 @@
 module ApplicationHelper
   def list_tag(arr)
     tag.ol do
-      safe_join(arr.map { |el| raw tag.li(el) })  
+      safe_join(arr.map { |el| raw tag.li(el) })
     end
   end
 end
