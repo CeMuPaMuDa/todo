@@ -1,4 +1,5 @@
 en:
+  copy: 'All rights reserved'
   activerecord:
     errors:
       messages:

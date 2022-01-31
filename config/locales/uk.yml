@@ -1,4 +1,5 @@
 uk:
+  copy: 'Усі права захищені'
   activerecord:
     errors:
       messages:

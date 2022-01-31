@@ -1,12 +1,13 @@
-h1.main_heading О нас
+h1.fs-1.text-center.text-info.bg-dark 
+  = t('text.header.about')
+.bg-dark 
+  = image_tag("/bird.png", width: "450px")
+  = list_tag(%w[first second therd])
+  .link_block
 
-= image_tag("/bird.png", width: "450px")
-= list_tag(%w[first second therd])
-.link_block
-
-.btn-group aria-label=("Basic mixed styles example") role="group" 
-  button.btn.btn-warning.text-info  type="button"
-    = link_to  "Главная", root_path
-  button.btn.btn-light type="button"
-    = link_to  "Помощь", help_path
+  .btn-group aria-label=("Basic mixed styles example") role="group" 
+    button.btn.btn-warning.text-info  type="button"
+      = link_to t('pages.main_page'), root_path
+    button.btn.btn-light type="button"
+      = link_to t('pages.help'), help_path
 

@@ -1,4 +1,5 @@
 ru:
+  copy: 'Все права защищены'
   activerecord:
     errors:
       messages:
