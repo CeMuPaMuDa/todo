@@ -12,7 +12,7 @@ module Admin
       @admin_users = policy_scope(
         User,
         policy_scope_class: Admin::UserPolicy::Scope
-      ).all
+      ).includes(:roles).page(params[:page]).per(7)
     end
 
     # GET /admin/users/1
