@@ -1,9 +1,9 @@
 tr
-  td = admin_role.name
-    d = admin_role.alias_name
+  td = role.name
+  td = role.alias_name
   td
     button.btn.btn-primary type="button"
-      = link_to 'Show', admin_role_path(admin_role), class: 'link-warning'
+      = link_to 'Show', admin_role_path(role), class: 'link-warning'
   td
     button.btn.btn-warning type="button"
-      = link_to 'Edit', edit_admin_role_path(admin_role), class: 'link-info'
+      = link_to 'Edit', edit_admin_role_path(role), class: 'link-info'
