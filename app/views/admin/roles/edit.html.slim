@@ -1,7 +1,12 @@
-h1 Editing admin_role
+h1.fs-1.text-center.text-info.bg-dark
+  | Редактирование роли
 
 == render 'form'
 
-=> link_to 'Show', @admin_role
-'|
-=< link_to 'Back', admin_roles_path
+br
+.btn-group aria-label=("Basic mixed styles example") role="group"
+  button.btn.btn-warning.text-info  type="button"
+    = link_to 'Show', [:admin, @admin_role]
+  button.btn.btn-light type="button"
+    = link_to 'Back', admin_roles_path
+

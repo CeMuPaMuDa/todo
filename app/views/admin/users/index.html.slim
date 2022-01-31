@@ -12,7 +12,7 @@ table.table.table-dark.table-striped
             = link_to 'Show', admin_user_path(user), class: 'link-warning'
         td
           button.btn.btn-warning type="button"
-            = link_to 'Edit', edit_admin_user_path(user), class: 'link-info'
+            = link_to 'Edit', edit_admin_user_path(user)
         td
           - unless user.id == current_user.id
             button.btn.btn-danger type="button"

@@ -4,7 +4,6 @@ module Admin
   class UsersController < Admin::ApplicationController
     before_action :set_admin_user, only: %i[show edit update destroy]
 
-
     # GET /admin/users
     def index
       authorize [:admin, User]
