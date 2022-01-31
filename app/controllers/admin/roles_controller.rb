@@ -63,7 +63,8 @@ module Admin
 
     # Only allow a list of trusted parameters through.
     def admin_role_params
-      params.fetch(:admin_role, {})
+      # params.fetch(:admin_role, {})
+      params.require(:role).permit(:name, :alias_name)
     end
   end
 end
