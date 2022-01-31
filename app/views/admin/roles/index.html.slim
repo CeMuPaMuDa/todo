@@ -2,16 +2,7 @@ h1.fs-1.text-center.text-info.bg-dark Списток Ролей
 
 table.table.table-dark.table-striped
   tbody
-    - @admin_roles.each do |admin_role|
-      tr
-        td = admin_role.name
-        td = admin_role.alias_name
-        td
-          button.btn.btn-primary type="button"
-            = link_to 'Show', admin_role_path(admin_role), class: 'link-warning'
-        td
-          button.btn.btn-warning type="button"
-            = link_to 'Edit', edit_admin_role_path(admin_role), class: 'link-info'
+    = render partial: 'role', collection: @admin_roles
 
 
 br
