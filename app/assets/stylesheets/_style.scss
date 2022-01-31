@@ -66,19 +66,19 @@ footer {
   border-radius: 15px;
 }
 
-.first-list{
+.first-list {
   position: relative;
 }
-.first-list>li:hover .second-list{
+.first-list > li:hover .second-list {
   display: block;
 }
-.second-list{
+.second-list {
   display: none;
   position: absolute;
-  left: 80px;
-  top: 0;
+  left: 70px;
+  top: -25px;
+  padding-left: 35px;
+  background-color: inherit;
 }
-.second-list>li{
-  background-color: rgb(255, 255, 255);
-  padding: 2px;
-}
+
+

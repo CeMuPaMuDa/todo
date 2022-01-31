@@ -1,8 +1,4 @@
 ru:
-  en: Английский
-  ru: Русский
-  uk: Украинский
-  copy: 'Все права защищены'
   activerecord:
     errors:
       messages:

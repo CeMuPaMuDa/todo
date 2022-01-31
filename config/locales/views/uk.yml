@@ -1,1 +1,13 @@
 uk:
+  en: Англійська
+  ru: Російська
+  uk: Українська
+  copy: 'Усі права захищені'
+  pages:
+    user_panel:
+      hello: Вітаю
+      exit: Вихід
+      sign_in: Увійти
+      registration: Зареєструватися
+      admin_panel: Панель адміністратора
+      edit_profile: Редагувати
