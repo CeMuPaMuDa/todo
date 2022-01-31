@@ -12,18 +12,19 @@ class ApplicationController < ActionController::Base
   end
 
   def switch_locale(&action)
-    locale = current_locale || I18n.default_locale
+    locale = locale_from_url || I18n.default_locale
     I18n.with_locale locale, &action
   end
 
-  def current_locale
-    locale = params[:locale]
+  def locale_from_url
+    loc = params[:locale]
 
-    return locale if I18n.available_locales.map(&:to_s)
-                         .include?(locale)
+    return loc if I18n.available_locales.map(&:to_s).include?(loc)
+
+    nil
   end
 
   def default_url_options
-    { locale: I18n.locale }    
+    { locale: I18n.locale }
   end
 end
