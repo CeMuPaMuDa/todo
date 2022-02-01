@@ -1,1 +1,8 @@
 ru:
+  text:
+    header:
+      users_list: Список пользователей
+      roles_list: Список ролей
+  links:
+    users: Пользователи
+    roles: Роли   

@@ -1,2 +1,8 @@
 en:
-  
+  text:
+    header:
+      users_list: Listing users
+      roles_list: Listing roles  
+  links:
+    users: Users
+    roles: Roles

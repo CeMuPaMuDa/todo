@@ -1,0 +1,10 @@
+ru:
+  activerecord:
+    models:
+      role: Роль
+    attributes:
+      role:
+        name: Название
+        alias_name: Краткий псевдоним
+        created_at: Зоздана
+        updated_at: Изменена

@@ -1,0 +1,12 @@
+uk:
+  activerecord:
+    models:
+      event: Подія
+    attributes:
+      event:
+        title: Назва
+        description: Опис
+        completed: Завершена
+        deadline: Кінцевий термін
+        created_at: Створена
+        updated_at: Змінена

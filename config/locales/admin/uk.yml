@@ -1,1 +1,8 @@
 uk:
+  text:
+    header:
+      users_list: Перелік користувачів
+      roles_list: Перелік ролей
+  links:
+    users: Користувачі
+    roles: Ролі 

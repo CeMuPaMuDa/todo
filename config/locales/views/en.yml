@@ -11,3 +11,10 @@ en:
       registration: Registration
       admin_panel: Admin panel
       edit_profile: Edit profile
+  links:
+    show: Show
+    edit: Edit
+    destroy: Destroy
+    back: Back
+
+ 

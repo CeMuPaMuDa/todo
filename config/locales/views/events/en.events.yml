@@ -1,0 +1,7 @@
+en:
+  text:
+    header:
+      events_list: Listing events
+      event_edit: Edit event
+  links:
+    new: New Event

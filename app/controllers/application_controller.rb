@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
   private
 
   def devise_permit_params
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:name])
+    devise_parameter_sanitizer.permit(:account_update, keys: [:name])
   end
 
   def switch_locale(&action)

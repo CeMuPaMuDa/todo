@@ -10,4 +10,9 @@ ru:
       sign_in: Войти
       registration: Зарегистрироваться
       admin_panel: Панель администратора
-      edit_profile: Редагувати профіль
+      edit_profile: Редактировать профиль
+  links:
+    show: Просмотреть
+    edit: Редактировать
+    destroy: Удалить
+    back: Назад
