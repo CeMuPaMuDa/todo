@@ -1,0 +1,23 @@
+h1 Listing items
+table
+  tr
+    th Title
+    th Description
+    th Completed
+    th Deadline
+    th Event
+    th
+    th
+    th
+  - @items.each do |item|
+    tr
+      td= item.title
+      td= item.description
+      td= item.completed
+      td= item.deadline
+      td= item.event
+      td= link_to 'Show', [item.event, item]
+      td= link_to 'Edit', edit_event_item_path(item.event, item)
+      td= link_to 'Destroy', [item.event, item], method: :delete,data: { confirm: 'Are you sure?' }  
+br
+= link_to 'New Item', new_event_item_path(params[:event_id])
