@@ -1,0 +1,20 @@
+en:
+  en: English
+  ru: Russian
+  uk: Ukrainian
+  copy: 'All rights reserved'
+  pages:
+    user_panel:
+      hello: Hello
+      exit: Sign out
+      sign_in: Sign in
+      registration: Registration
+      admin_panel: Admin panel
+      edit_profile: Edit profile
+  links:
+    show: Show
+    edit: Edit
+    destroy: Destroy
+    back: Back
+
+ 

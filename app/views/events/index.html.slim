@@ -1,4 +1,5 @@
-h1.fs-1.text-center.text-info.bg-dark Список событий
+h1.fs-1.text-center.text-info.bg-dark
+  = t('text.header.events_list')
 
 table.table.table-dark.table-striped
   tbody
@@ -10,5 +11,5 @@ ul.flex_page.pagination.justify-content-start
   = paginate @events, class: 'page-link'
 br
 p.btn.btn-success
-  = link_to 'New Event', new_event_path, class: 'link-warning'
+  = link_to t('links.new'), new_event_path, class: 'link-warning'
 

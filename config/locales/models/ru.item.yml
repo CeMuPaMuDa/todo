@@ -1,0 +1,12 @@
+ru:
+  activerecord:
+    models:
+      item: Подзадача
+    attributes:
+      item:
+        title: Название
+        description: Описание
+        completed: Завершенная
+        deadline: Крайний срок
+        created_at: Создана
+        updated_at: Изменена
