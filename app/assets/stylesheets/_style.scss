@@ -81,4 +81,11 @@ footer {
   background-color: inherit;
 }
 
+a{
+  color: rgb(167, 109, 221);
+  text-decoration: none;
+  &:hover{
+    color: coral;
+  }
+}
 

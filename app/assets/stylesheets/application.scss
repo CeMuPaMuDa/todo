@@ -11,8 +11,9 @@
  * It is generally better to create a new file per style scope.
  *
  */
+@import "reset";
 @import "font_awesome5_webfont";
 @import "bootstrap";
 @import "rails_bootstrap_forms";
 @import "style";
-@import "reset";
+
