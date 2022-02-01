@@ -11,10 +11,8 @@ p
 p
   b Deadline:
   = @item.deadline
-p
-  b Event:
-  = @item.event
-= link_to 'Edit', edit_event_item_path(@item.event, @item)
+
+=> link_to 'Edit', edit_event_item_path(@item.event, @item)
 | \
-= link_to 'Back', event_items_path(@item.event)
+=< link_to 'Back', event_items_path(@item.event)
 
