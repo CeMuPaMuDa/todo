@@ -1,4 +1,4 @@
-p#notice= notice
+p#notice = notice
 .card.bg-dark 
   .card-body
     h5.card-title.fs-1.text-info
@@ -11,13 +11,7 @@ p#notice= notice
         - @event.items.each do |item|
           li
             = link_to item.title.truncate(80), [item.event, item], class: 'link-info' 
-/     p
-/       strong.fs-4.text-info Items:
-/       table.table.table-dark.table-striped
-/         - @event.items.order(:created_at).each_with_index do |item, i|
-/           tr
-/             td = i + 1
-/             td = item.title
+
 br            
 .btn-group aria-label=("Basic mixed styles example") role="group" 
   button.btn.btn-warning.text-info  type="button"

@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 class ItemsController < ApplicationController
   before_action :set_event
-  before_action :set_item, only: [:show, :edit, :update, :destroy]
+  before_action :set_item, only: %i[show edit update destroy]
 
   # GET /items
   def index
@@ -8,8 +10,7 @@ class ItemsController < ApplicationController
   end
 
   # GET /items/1
-  def show
-  end
+  def show; end
 
   # GET /items/new
   def new
@@ -17,8 +18,7 @@ class ItemsController < ApplicationController
   end
 
   # GET /items/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /items
   def create
@@ -48,17 +48,18 @@ class ItemsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_event
-      @event = Event.find(params[:event_id])
-    end
 
-    def set_item
-      @item = @event.items.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_event
+    @event = Event.find(params[:event_id])
+  end
 
-    # Only allow a trusted parameter "white list" through.
-    def item_params
-      params.require(:item).permit(:title, :description, :completed, :deadline, :event_id)
-    end
+  def set_item
+    @item = @event.items.find(params[:id])
+  end
+
+  # Only allow a trusted parameter "white list" through.
+  def item_params
+    params.require(:item).permit(:title, :description, :completed, :deadline, :event_id)
+  end
 end
