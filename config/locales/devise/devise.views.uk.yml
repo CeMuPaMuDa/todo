@@ -2,31 +2,35 @@ uk:
   activerecord:
     attributes:
       user:
-        confirmation_sent_at: Підтвердження надіслано о
-        confirmation_token: Код підтвердження
-        confirmed_at: Підтверджено
-        created_at: Створено
+        confirmation_sent_at: Дата відправки підтвердження
+        confirmation_token: Токен підтвердження
+        confirmed_at: Дата підтвердження
+        created_at: Дата створення
         current_password: Поточний пароль
-        current_sign_in_at: Поточна сесія відкрита
-        current_sign_in_ip: IP поточної сесії
-        email: Адреса електронної пошти
-        encrypted_password: Зашифрований пароль
-        failed_attempts: Хибних спроб
-        last_sign_in_at: Останній раз заходив
-        last_sign_in_ip: IP останнього заходу
-        locked_at: Заблокований
+        current_sign_in_at: Дата поточного входу
+        current_sign_in_ip: IP поточного входу
+        email: Email
+        encrypted_password: Зашифрований пароль 
+        failed_attempts: Невдалі спроби 
+        last_sign_in_at: Дата останнього входу
+        last_sign_in_ip: IP останнього входу
+        locked_at: Дата блокування
         password: Пароль
         password_confirmation: Підтвердження пароля
-        remember_created_at: Нагадування створене
+        remember_created_at: Дата створення запам'ятовування
         remember_me: Запам'ятати мене
-        reset_password_sent_at: Листа для скидання пароля надіслано
-        reset_password_token: Посилання на скидання пароля
-        sign_in_count: Кількість входів
-        unconfirmed_email: Не підтверджений email
+        reset_password_sent_at: Дата відправки скидання пароля
+        reset_password_token: Токен скидання пароля
+        sign_in_count: Кільківть входів
+        unconfirmed_email: Непідтверджений email
         unlock_token: Токен розблокування
-        updated_at: Змінений
+        updated_at: Дата оновлення
     models:
-      user: Користувач
+      user:
+        few: Користувача
+        many: Користувачів
+        one: Користувач
+        other: Користувачі
   devise:
     confirmations:
       confirmed: Ваш обліковий запис підтверджено. Ви увійшли в систему.

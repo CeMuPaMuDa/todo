@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
 scope "(:locale)" do
     namespace :admin do
       resources :roles
@@ -7,7 +8,9 @@ scope "(:locale)" do
     end
 
     devise_for :users
-    resources :events
+    resources :events do
+      resources :items
+    end
     get 'events/page/(:page(.:format))', to: 'events#index'
 
     get 'help', to: 'help#index', as: 'help'

@@ -10,7 +10,7 @@ body {
   font-style: normal;
   font-weight: 500;
   color: bisque;
-  background: linear-gradient(320.84deg, #000000 20.07%, #040c51 96.22%);
+  background: linear-gradient(135deg, rgb(20, 36, 118), rgb(19, 78, 217), rgb(8, 126, 219));
 }
 .wrapper {
   max-width: 1440px;
@@ -81,4 +81,11 @@ footer {
   background-color: inherit;
 }
 
+a{
+  color: rgb(167, 109, 221);
+  text-decoration: none;
+  &:hover{
+    color: coral;
+  }
+}
 

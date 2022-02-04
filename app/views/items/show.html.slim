@@ -1,0 +1,18 @@
+p#notice= notice
+p
+  b Title:
+  = @item.title
+p
+  b Description:
+  = @item.description
+p
+  b Completed:
+  = @item.completed
+p
+  b Deadline:
+  = @item.deadline
+
+=> link_to 'Edit', edit_event_item_path(@item.event, @item)
+| \
+=< link_to 'Back', event_items_path(@item.event)
+
