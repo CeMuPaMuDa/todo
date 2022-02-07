@@ -22,6 +22,7 @@ gem 'rails-i18n'
 gem 'sass-rails', '>= 6'
 gem 'slim-rails'
 gem 'webpacker', '~> 5.0'
+gem 'w3css_rails', '~> 4.0'
 
 group :development, :test do
   gem 'ffaker', '~> 2.20'

@@ -218,6 +218,7 @@ GEM
     tilt (2.0.10)
     tzinfo (2.0.4)
       concurrent-ruby (~> 1.0)
+    w3css_rails (4.0.0)
     warden (1.2.9)
       rack (>= 2.0.9)
     web-console (4.2.0)
@@ -259,6 +260,7 @@ DEPENDENCIES
   rails-i18n
   sass-rails (>= 6)
   slim-rails
+  w3css_rails (~> 4.0)
   web-console (>= 4.1.0)
   webpacker (~> 5.0)
 
