@@ -75,6 +75,8 @@ GEM
     bootstrap_form (5.0.0)
       actionpack (>= 5.2)
       activemodel (>= 5.2)
+    breadcrumbs_on_rails (4.1.0)
+      railties (>= 5.0)
     builder (3.2.4)
     concurrent-ruby (1.1.9)
     crass (1.0.6)
@@ -243,6 +245,7 @@ DEPENDENCIES
   bootsnap (>= 1.4.4)
   bootstrap
   bootstrap_form (~> 5.0)
+  breadcrumbs_on_rails
   devise (~> 4.8, >= 4.8.1)
   devise-i18n (~> 1.10, >= 1.10.1)
   ffaker (~> 2.20)

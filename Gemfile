@@ -23,6 +23,7 @@ gem 'sass-rails', '>= 6'
 gem 'slim-rails'
 gem 'webpacker', '~> 5.0'
 gem 'w3css_rails', '~> 4.0'
+gem "breadcrumbs_on_rails"
 
 group :development, :test do
   gem 'ffaker', '~> 2.20'

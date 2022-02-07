@@ -12,7 +12,7 @@ html
     .wrapper
       = render 'shared/header'
       main
+        = render_breadcrumbs :separator => ' / '  
         = yield
       footer
         p &copy; #{t(:copy)}
-        p 

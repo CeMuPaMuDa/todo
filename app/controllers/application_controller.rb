@@ -5,6 +5,7 @@ class ApplicationController < ActionController::Base
   before_action :devise_permit_params, if: :devise_controller?
   around_action :switch_locale
 
+
   private
 
   def devise_permit_params
