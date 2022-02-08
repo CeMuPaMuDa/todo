@@ -1,9 +1,0 @@
-header
-  nav.menu.navbar.navbar-dark.bg-secondary
-    ul.menu-item
-      li.menu-list = link_to_unless_current  t('pages.main_page'), root_path
-      li.menu-list = link_to_unless_current  t('links.users'), admin_root_path
-      li.menu-list = link_to_unless_current  t('links.roles'), admin_roles_path
-      li = render 'shared/lang'
-
-        

@@ -1,8 +1,8 @@
 tr
-  td 
-    p.badge.rounded-pill.bg-warning.text-dark
-      => event.items.size
-  td =< link_to event.title.truncate(80), event, class: 'link-info'
+  td
+    span.badge.rounded-pill.bg-warning.text-dark
+      => event.items.size 
+    =< link_to event.title.truncate(80), event, class: 'link-info'
   td
     = link_to content_tag('span', '', class: 'fas fa-feather text-info'),
       edit_event_path(event)

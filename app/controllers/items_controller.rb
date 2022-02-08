@@ -3,8 +3,7 @@
 class ItemsController < ApplicationController
   before_action :set_event
   before_action :set_item, only: %i[show edit update destroy]
-  add_breadcrumb "Events", :events_path
-
+  add_breadcrumb 'Events', :events_path
 
   # GET /items
   def index
@@ -13,22 +12,22 @@ class ItemsController < ApplicationController
 
   # GET /items/1
   def show
-  add_breadcrumb "Event: #{@event.title}", event_path(@event)
-  add_breadcrumb "Item: #{@item.title}", event_item_path
+    add_breadcrumb "Event: #{@event.title}", event_path(@event)
+    add_breadcrumb "Item: #{@item.title}", event_item_path
   end
 
   # GET /items/new
   def new
     @item = @event.items.build
     add_breadcrumb "Event: #{@event.title}", event_path(@event)
-    add_breadcrumb "New item", new_event_item_path
+    add_breadcrumb 'New item', new_event_item_path
   end
 
   # GET /items/1/edit
   def edit
     add_breadcrumb "Event: #{@event.title}", event_path(@event)
-    add_breadcrumb "Item: #{@item.title}", event_item_path(@item)
-    add_breadcrumb "Edit item", edit_event_item_path
+    add_breadcrumb "Item: #{@item.title}", event_item_path
+    add_breadcrumb 'Edit item', edit_event_item_path
   end
 
   # POST /items

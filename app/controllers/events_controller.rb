@@ -3,12 +3,12 @@
 class EventsController < ApplicationController
   before_action :set_event, only: %i[show edit update destroy]
   before_action :authenticate_user!
-  add_breadcrumb "Events", :events_path
+  before_action :add_index_breadcrumb, only: %i[show edit new]
 
   # GET /events
   def index
     @events = policy_scope(Event).includes(:items).page(params[:page]).per(10)
-    # add_breadcrumb("Events")
+
   end
 
   # GET /events/1
@@ -20,14 +20,14 @@ class EventsController < ApplicationController
   # GET /events/new
   def new
     @event = Event.new
-    add_breadcrumb "New", new_event_path
+    add_breadcrumb 'New', new_event_path
   end
 
   # GET /events/1/edit
   def edit
     authorize @event
     add_breadcrumb "Event: #{@event.title}", event_path(@event)
-    add_breadcrumb "Edit", edit_event_path
+    add_breadcrumb 'Edit', edit_event_path
   end
 
   # POST /events
@@ -64,8 +64,12 @@ class EventsController < ApplicationController
   def set_event
     @event = Event.find(params[:id])
   end
+
   # Only allow a list of trusted parameters through.
   def event_params
     params.require(:event).permit(:title, :description, :completed)
+  end
+  def add_index_breadcrumb
+    add_breadcrumb 'Events', events_path
   end
 end
