@@ -4,7 +4,10 @@
 // that code so it'll be compiled.
 //= require jquery3
 //= require popper
-//= require bootstrap
+//= require bootstrap-sprockets
 import Rails from "@rails/ujs"
+
+import '@popperjs/core'
+import 'bootstrap/js/dist/dropdown'
 
 Rails.start()

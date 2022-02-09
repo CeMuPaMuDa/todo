@@ -1,10 +1,8 @@
 h1.fs-1.text-center.text-info.bg-dark
   = t('text.header.events_list')
-
 table.table.table-dark.table-striped
   tbody
     = render partial: 'event', collection: @events
-
 br
 ul.flex_page.pagination.justify-content-start
   li.page-item

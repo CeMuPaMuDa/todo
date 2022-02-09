@@ -75,6 +75,8 @@ GEM
     bootstrap_form (5.0.0)
       actionpack (>= 5.2)
       activemodel (>= 5.2)
+    breadcrumbs_on_rails (4.1.0)
+      railties (>= 5.0)
     builder (3.2.4)
     concurrent-ruby (1.1.9)
     crass (1.0.6)
@@ -218,6 +220,7 @@ GEM
     tilt (2.0.10)
     tzinfo (2.0.4)
       concurrent-ruby (~> 1.0)
+    w3css_rails (4.0.0)
     warden (1.2.9)
       rack (>= 2.0.9)
     web-console (4.2.0)
@@ -242,6 +245,7 @@ DEPENDENCIES
   bootsnap (>= 1.4.4)
   bootstrap
   bootstrap_form (~> 5.0)
+  breadcrumbs_on_rails
   devise (~> 4.8, >= 4.8.1)
   devise-i18n (~> 1.10, >= 1.10.1)
   ffaker (~> 2.20)
@@ -259,6 +263,7 @@ DEPENDENCIES
   rails-i18n
   sass-rails (>= 6)
   slim-rails
+  w3css_rails (~> 4.0)
   web-console (>= 4.1.0)
   webpacker (~> 5.0)
 
