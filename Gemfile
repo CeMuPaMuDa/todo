@@ -5,13 +5,14 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.0.3'
 gem 'bootsnap', '>= 1.4.4', require: false
-# gem 'jbuilder', '~> 2.7'
 gem 'bootstrap'
 gem 'bootstrap_form', '~> 5.0'
 gem 'breadcrumbs_on_rails'
 gem 'devise', '~> 4.8', '>= 4.8.1'
 gem 'devise-i18n', '~> 1.10', '>= 1.10.1'
 gem 'font_awesome5_rails'
+gem 'grape', '~> 1.6', '>= 1.6.2'
+gem 'jbuilder', '~> 2.7'
 gem 'jquery-rails'
 gem 'kaminari'
 gem 'kaminari-i18n', '~> 0.5.0'

@@ -6,7 +6,6 @@ module Admin
     add_breadcrumb 'Admin Panel', :admin_root_path
     before_action :add_users_admin_breadcrumb, only: %i[index show edit new]
 
-
     # GET /admin/users
     def index
       authorize [:admin, User]
@@ -19,7 +18,7 @@ module Admin
     # GET /admin/users/1
     def show
       authorize [:admin, @admin_user]
-      add_breadcrumb "#{@admin_user.name}", admin_user_path
+      add_breadcrumb @admin_user.name.to_s, admin_user_path
     end
 
     # GET /admin/users/new

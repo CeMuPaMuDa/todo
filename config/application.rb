@@ -19,6 +19,8 @@ module Todo
     config.time_zone = 'Kyiv'
     config.eager_load_paths += Dir["#{config.root}/lib/**/"]
     config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.yml')]
+    config.paths.add File.join('app', 'api'), glob: File.join('**', '*.rb')
+    config.autoload_paths += Dir[Rails.root.join('app', 'api', '*')]
     config.generators do |g|
       g.orm              :active_record
       g.template_engine  :slim
