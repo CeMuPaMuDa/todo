@@ -10,7 +10,7 @@ class Events < Grape::API
     end
 
     get '/' do
-      events_scope(params[:all])
+      present events_scope(params[:all]), with: Entities::EventIndex
     end
 
     route_param :event_id, type: Integer do
