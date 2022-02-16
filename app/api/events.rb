@@ -19,7 +19,7 @@ class Events < Grape::API
       end
 
       get '/' do
-        @event
+        present @event, with: Entities::Event
       end
 
       post '/' do

@@ -19,8 +19,10 @@ module Todo
     config.time_zone = 'Kyiv'
     config.eager_load_paths += Dir["#{config.root}/lib/**/"]
     config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.yml')]
-    config.paths.add File.join('app', 'api', '*'), glob: File.join('**', '*.rb')
-    config.eager_load_paths += Dir[Rails.root.join('app', 'api', '*')]
+    # config.paths.add Rails.root.join('app/api/helpers').to_s, eager_load: true
+    # config.paths.add File.join('app', 'api', '*'), glob: File.join('**', '*.rb')
+    # config.eager_load_paths += Dir[Rails.root.join('app', 'api', '*')]
+    config.eager_load_paths += Dir["#{config.root}/app/api/**/"]
     config.generators do |g|
       g.orm              :active_record
       g.template_engine  :slim
