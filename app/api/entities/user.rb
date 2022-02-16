@@ -3,10 +3,11 @@ module Entities
 
     root 'user', 'users'
 
-    expose :id, :name, :role
-
-    def role
-      object.role.alias_name
+    expose :name, :email
+    expose :role, using: 'Entities::Role' do |user, _|
+      user.role
     end
+
+
   end
 end
