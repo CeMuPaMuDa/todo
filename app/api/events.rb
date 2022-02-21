@@ -2,7 +2,7 @@
 
 class Events < Grape::API
   include Grape::Kaminari
-  helpers FiltersHelper, EventsHelper
+  helpers FiltersHelper, EventsHelper, Pundit
 
   resource :events do
     desc 'Список дел'
@@ -12,7 +12,9 @@ class Events < Grape::API
     end
 
     get '/' do
-      present paginate(events_scope(params[:all])), with: Entities::EventIndex
+      scope = policy_scope(events_scope(params[:all]))
+      # present paginate(events_scope(params[:all])), with: Entities::EventIndex
+      present paginate(scope), with: Entities::EventIndex
     end
 
     route_param :event_id, type: Integer do
@@ -21,6 +23,7 @@ class Events < Grape::API
       end
 
       get '/' do
+        authorize @event, :show?
         present @event, with: Entities::Event
       end
 
