@@ -8,7 +8,6 @@ class EventsController < ApplicationController
   # GET /events
   def index
     @events = policy_scope(Event).includes(:items).page(params[:page]).per(10)
-
   end
 
   # GET /events/1
@@ -69,6 +68,7 @@ class EventsController < ApplicationController
   def event_params
     params.require(:event).permit(:title, :description, :completed)
   end
+
   def add_index_breadcrumb
     add_breadcrumb 'Events', events_path
   end

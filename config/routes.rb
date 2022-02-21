@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-
-scope "(:locale)" do
+  mount RootApi => '/'
+  scope "(:locale)" do
     namespace :admin do
       resources :roles
       resources :users
