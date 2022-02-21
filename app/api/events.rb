@@ -13,7 +13,6 @@ class Events < Grape::API
 
     get '/' do
       scope = policy_scope(events_scope(params[:all]))
-      # present paginate(events_scope(params[:all])), with: Entities::EventIndex
       present paginate(scope), with: Entities::EventIndex
     end
 
