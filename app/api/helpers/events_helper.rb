@@ -5,7 +5,7 @@ module EventsHelper
 
   def events_scope(all)
     scope = Event.order(:id)
-                #  .includes(user: :role)
+    #  .includes(user: :role)
     all ? scope : scope.where(completed: false)
   end
 end
