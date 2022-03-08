@@ -1,5 +1,5 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: 'gb.tdl86@gmail.com'
+  default from: email_address_with_name(ENV['EMAIL'], 'TODO-list')
   layout 'mailer'
 end
 

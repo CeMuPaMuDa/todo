@@ -33,6 +33,7 @@ gem 'webpacker', '~> 5.0'
 group :development, :test do
   gem 'ffaker', '~> 2.20'
   gem 'letter_opener'
+  gem 'dotenv-rails'
 end
 
 group :development do
