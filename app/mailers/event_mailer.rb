@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class EventMailer < ApplicationMailer
   def user_deadlines(user, events)
     @events = events
