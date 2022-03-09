@@ -4,14 +4,14 @@
 #
 # Table name: events
 #
-#  id                                               :bigint           not null, primary key
-#  completed(Завершена? Да (true) / Нет (false))    :boolean          default(FALSE)
-#  deadline(Дата и время завершения (по плану))     :datetime
-#  description(Краткое описание задачи)             :text
-#  title(Название задачи)                           :string
-#  created_at                                       :datetime         not null
-#  updated_at                                       :datetime         not null
-#  user_id(Внешний ключ для связи с таблицей users) :bigint
+#  id          :bigint           not null, primary key
+#  completed   :boolean          default(FALSE)
+#  deadline    :datetime
+#  description :text
+#  title       :string
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#  user_id     :bigint
 #
 # Indexes
 #

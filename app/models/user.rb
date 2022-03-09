@@ -4,23 +4,23 @@
 #
 # Table name: users
 #
-#  id                                                            :bigint           not null, primary key
-#  active(Состояние пользователя: активен(true), забанен(false)) :boolean          default(TRUE)
-#  authentication_token                                          :string
-#  current_sign_in_at                                            :datetime
-#  current_sign_in_ip                                            :string
-#  email(E-mail пользователя)                                    :string
-#  encrypted_password                                            :string           default(""), not null
-#  last_sign_in_at                                               :datetime
-#  last_sign_in_ip                                               :string
-#  name(Имя(никнейм/логин) пользователя)                         :string
-#  remember_created_at                                           :datetime
-#  reset_password_sent_at                                        :datetime
-#  reset_password_token                                          :string
-#  sign_in_count                                                 :integer          default(0), not null
-#  created_at                                                    :datetime         not null
-#  updated_at                                                    :datetime         not null
-#  role_id(Роль пользователя)                                    :integer
+#  id                     :bigint           not null, primary key
+#  active                 :boolean          default(TRUE)
+#  authentication_token   :string
+#  current_sign_in_at     :datetime
+#  current_sign_in_ip     :string
+#  email                  :string
+#  encrypted_password     :string           default(""), not null
+#  last_sign_in_at        :datetime
+#  last_sign_in_ip        :string
+#  name                   :string
+#  remember_created_at    :datetime
+#  reset_password_sent_at :datetime
+#  reset_password_token   :string
+#  sign_in_count          :integer          default(0), not null
+#  created_at             :datetime         not null
+#  updated_at             :datetime         not null
+#  role_id                :integer
 #
 # Indexes
 #
