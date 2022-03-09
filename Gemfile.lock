@@ -62,6 +62,9 @@ GEM
       zeitwerk (~> 2.3)
     addressable (2.8.0)
       public_suffix (>= 2.0.2, < 5.0)
+    annotate (3.2.0)
+      activerecord (>= 3.2, < 8.0)
+      rake (>= 10.4, < 14.0)
     autoprefixer-rails (10.4.2.0)
       execjs (~> 2)
     bcrypt (3.1.16)
@@ -297,6 +300,7 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
+  annotate
   bootsnap (>= 1.4.4)
   bootstrap
   bootstrap_form (~> 5.0)

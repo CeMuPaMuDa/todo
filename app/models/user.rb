@@ -1,5 +1,38 @@
 # frozen_string_literal: true
 
+# == Schema Information
+#
+# Table name: users
+#
+#  id                                                            :bigint           not null, primary key
+#  active(Состояние пользователя: активен(true), забанен(false)) :boolean          default(TRUE)
+#  authentication_token                                          :string
+#  current_sign_in_at                                            :datetime
+#  current_sign_in_ip                                            :string
+#  email(E-mail пользователя)                                    :string
+#  encrypted_password                                            :string           default(""), not null
+#  last_sign_in_at                                               :datetime
+#  last_sign_in_ip                                               :string
+#  name(Имя(никнейм/логин) пользователя)                         :string
+#  remember_created_at                                           :datetime
+#  reset_password_sent_at                                        :datetime
+#  reset_password_token                                          :string
+#  sign_in_count                                                 :integer          default(0), not null
+#  created_at                                                    :datetime         not null
+#  updated_at                                                    :datetime         not null
+#  role_id(Роль пользователя)                                    :integer
+#
+# Indexes
+#
+#  index_users_on_authentication_token  (authentication_token) UNIQUE
+#  index_users_on_email                 (email) UNIQUE
+#  index_users_on_name                  (name) UNIQUE
+#  index_users_on_reset_password_token  (reset_password_token) UNIQUE
+#
+# Foreign Keys
+#
+#  fk_rails_...  (role_id => roles.id)
+#
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable

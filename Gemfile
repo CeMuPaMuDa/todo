@@ -37,6 +37,7 @@ group :development, :test do
 end
 
 group :development do
+  gem 'annotate'
   gem 'listen', '~> 3.3'
   gem 'rack-mini-profiler', '~> 2.0'
   gem 'web-console', '>= 4.1.0'
