@@ -37,7 +37,7 @@ hash_events = 42.times.map do
   {
     title: FFaker::CheesyLingo.title,
     description: FFaker::Lorem.paragraph,
-    deadline: (Time.now + rand(1..15).day),
+    deadline: (Time.zone.now + rand(1..15).day),
     user: users.sample
   }
 end
@@ -48,7 +48,7 @@ hash_items = 250.times.map do
   {
     title: FFaker::CheesyLingo.title,
     description: FFaker::CheesyLingo.sentence,
-    deadline: (Time.now + rand(1..15).day),
+    deadline: (Time.zone.now + rand(1..15).day),
     event: events.sample
   }
 end

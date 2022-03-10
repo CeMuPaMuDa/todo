@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 Rails.application.routes.draw do
   mount RootApi => '/'
-  scope "(:locale)" do
+  scope '(:locale)' do
     namespace :admin do
       resources :roles
       resources :users
@@ -16,6 +18,6 @@ Rails.application.routes.draw do
     get 'help', to: 'help#index', as: 'help'
     get 'about', to: 'about#index', as: 'about'
 
-    root 'events#index' 
+    root 'events#index'
   end
 end

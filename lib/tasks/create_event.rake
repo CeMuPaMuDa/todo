@@ -6,7 +6,7 @@ namespace :create do
     our_events = {
       title: FFaker::CheesyLingo.title,
       description: FFaker::CheesyLingo.sentence,
-      deadline: (Time.now + rand(1..12).month)
+      deadline: (Time.zone.now + rand(1..12).month)
     }
 
     Event.create! our_events

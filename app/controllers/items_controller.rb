@@ -43,7 +43,7 @@ class ItemsController < ApplicationController
 
   # PATCH/PUT /items/1
   def update
-    if @item.update_attributes(item_params)
+    if @item.update(item_params)
       redirect_to([@item.event, @item], notice: 'Item was successfully updated.')
     else
       render action: 'edit'
