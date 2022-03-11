@@ -11,6 +11,7 @@ gem 'breadcrumbs_on_rails'
 gem 'config'
 gem 'devise', '~> 4.8', '>= 4.8.1'
 gem 'devise-i18n', '~> 1.10', '>= 1.10.1'
+gem 'dotenv-rails'
 gem 'font_awesome5_rails'
 gem 'grape'
 gem 'grape-entity'
@@ -31,7 +32,6 @@ gem 'slim-rails'
 gem 'w3css_rails', '~> 4.0'
 gem 'webpacker', '~> 5.0'
 gem 'whenever', require: false
-  gem 'dotenv-rails'
 
 group :development, :test do
   gem 'ffaker', '~> 2.20'
