@@ -31,9 +31,9 @@ gem 'slim-rails'
 gem 'w3css_rails', '~> 4.0'
 gem 'webpacker', '~> 5.0'
 gem 'whenever', require: false
+  gem 'dotenv-rails'
 
 group :development, :test do
-  gem 'dotenv-rails'
   gem 'ffaker', '~> 2.20'
   gem 'letter_opener'
 end
