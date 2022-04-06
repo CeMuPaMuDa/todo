@@ -21,8 +21,8 @@ User.create!  email: admin_email,
               name: 'Админ',
               role: admin_role
 
-hash_users = 25.times.map do
-  email = FFaker::Internet.free_email
+hash_users = Array.new(25) do
+  email = FFaker::Internet.safe_email
   {
     name: FFaker::Internet.user_name[0..15],
     email: email,
@@ -33,22 +33,22 @@ end
 
 users = User.create! hash_users
 
-hash_events = 42.times.map do
+hash_events = Array.new(42) do
   {
     title: FFaker::CheesyLingo.title,
     description: FFaker::Lorem.paragraph,
-    deadline: (Time.now + rand(1..1100).day),
+    deadline: (Time.zone.now + rand(1..15).day),
     user: users.sample
   }
 end
 
 events = Event.create! hash_events
 
-hash_items = 250.times.map do
+hash_items = Array.new(250) do
   {
     title: FFaker::CheesyLingo.title,
     description: FFaker::CheesyLingo.sentence,
-    deadline: (Time.now + rand(1..1100).day),
+    deadline: (Time.zone.now + rand(1..15).day),
     event: events.sample
   }
 end

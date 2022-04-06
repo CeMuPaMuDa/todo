@@ -3,8 +3,8 @@
 module Admin
   class UsersController < Admin::ApplicationController
     before_action :set_admin_user, only: %i[show edit update destroy]
-    # after_action :verify_authorized, except: :index
-    # after_action :verify_policy_scoped, only: :index
+    add_breadcrumb 'Admin Panel', :admin_root_path
+    before_action :add_users_admin_breadcrumb, only: %i[index show edit new]
 
     # GET /admin/users
     def index
@@ -12,23 +12,27 @@ module Admin
       @admin_users = policy_scope(
         User,
         policy_scope_class: Admin::UserPolicy::Scope
-      ).all
+      ).includes(:role).page(params[:page]).per(7)
     end
 
     # GET /admin/users/1
     def show
       authorize [:admin, @admin_user]
+      add_breadcrumb @admin_user.name.to_s, admin_user_path
     end
 
     # GET /admin/users/new
     def new
       @admin_user = User.new
       authorize [:admin, @admin_user]
+      add_breadcrumb 'New User', new_admin_user_path
     end
 
     # GET /admin/users/1/edit
     def edit
       authorize [:admin, @admin_user]
+      add_breadcrumb "User: #{@admin_user.name}", admin_user_path(@admin_user)
+      add_breadcrumb 'Edit User', edit_admin_user_path
     end
 
     # POST /admin/users
@@ -68,7 +72,11 @@ module Admin
     # Only allow a list of trusted parameters through.
     def admin_user_params
       # params.fetch(:admin_user, {})
-      params.require(:user).permit(:name, :email, :password, :password_confirmation)
+      params.require(:user).permit(:name, :email, :password, :password_confirmation, :role_id)
+    end
+
+    def add_users_admin_breadcrumb
+      add_breadcrumb 'Users', admin_users_path
     end
   end
 end

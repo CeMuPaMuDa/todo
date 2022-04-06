@@ -1,0 +1,85 @@
+@import "reset"
+  
+@font-face
+  font-family: "IBM Plex Sans"
+  src: url(https://fonts.gstatic.com/s/ibmplexsans/v9/zYX9KVElMYYaJe8bpLHnCwDKjSL9AIVsdO_q.woff2) format("woff2")
+  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116
+
+body
+  font-family: "IBM Plex Sans", sans-serif
+  font-style: normal
+  font-weight: 500
+  color: bisque
+  background: linear-gradient(135deg, rgb(20, 36, 118), rgb(19, 78, 217), rgb(8, 126, 219))
+
+.wrapper
+  min-height: 100%
+  display: flex  
+  flex-direction: column
+
+main
+  flex: 1 1 auto
+  padding: 15px
+
+footer
+  padding: 15px
+
+.menu
+  padding: 15px
+  display: flex
+  justify-content: space-between
+  color: white
+
+.navbar
+  margin: 15px
+
+.nav_link
+  text-decoration: none
+  color: rgb(213, 91, 243)
+
+.flex_page
+  letter-spacing: 2px
+
+.page-link
+  background: inherit
+  color: aqua
+  &:hover
+    background: orange
+
+.card
+  background: inherit
+
+.menu-item
+  display: flex
+  margin: 0
+
+.menu-list
+  margin-right: 25px
+  align-self: center
+  padding: 15px
+
+.first-list
+  position: relative
+
+.first-list > li:hover .second-list
+  display: block
+
+.second-list
+  display: none
+  position: absolute
+  left: 70px
+  top: -25px
+  padding-left: 35px
+  background-color: inherit
+
+a
+  color: rgb(167, 109, 221)
+  text-decoration: none
+  &:hover
+    color: coral
+
+.menu-list
+  border-radius: 12.4px
+  box-shadow: inset 3.7px 3.7px 6.2px 0 #000, inset -6.2px -6.2px 6.2px 0 #3b4451
+  background-color: #2c2f33
+  padding: 15px

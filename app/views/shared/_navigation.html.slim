@@ -1,0 +1,5 @@
+ul.menu-item
+  li.menu-list = link_to_unless_current t('pages.main_page'), root_path
+  li.menu-list = link_to_unless_current t('pages.help'), help_path
+  li.menu-list = link_to_unless_current t('pages.about'), about_path
+

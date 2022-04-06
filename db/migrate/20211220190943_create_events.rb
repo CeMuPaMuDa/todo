@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 
 class CreateEvents < ActiveRecord::Migration[6.1]
   def change
@@ -12,7 +13,7 @@ class CreateEvents < ActiveRecord::Migration[6.1]
       t.datetime    :deadline,
                     comment: 'Дата и время завершения (по плану)'
       t.references  :user, foreign_key: true,
-                    comment: 'Внешний ключ для связи с таблицей users'
+                           comment: 'Внешний ключ для связи с таблицей users'
       t.timestamps
     end
   end

@@ -1,3 +1,4 @@
+p#notice = notice
 .card.bg-dark 
   .card-body
     h5.card-title.fs-1.text-info
@@ -6,20 +7,16 @@
       = @event.description
     p
       strong.fs-4.text-info Items:
-      table.table.table-dark.table-striped
-        - @event.items.order(:created_at).each_with_index do |item, i|
-          tr
-            td = i + 1
-            td = item.title
+      ol
+        - @event.items.each do |item|
+          li
+            = link_to item.title.truncate(80), [item.event, item], class: 'link-info' 
+
 br            
 .btn-group aria-label=("Basic mixed styles example") role="group" 
   button.btn.btn-warning.text-info  type="button"
     = link_to 'Edit', edit_event_path(@event)
   button.btn.btn-light type="button"
-    = link_to 'Back', events_path
-/ ul
-/   li.btn.btn-warning.text-info 
-/     = link_to 'Edit', edit_event_path(@event)
-/   li.btn.btn-light 
-/     = link_to 'Back', events_path
+    = link_to t('links.back'), events_path
+
 

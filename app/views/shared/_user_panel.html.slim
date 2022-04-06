@@ -1,0 +1,20 @@
+ul.menu-item
+  - if user_signed_in?
+    li.menu-list #{t('pages.user_panel.hello')}, #{current_user.name}
+    li.menu-list = link_to t('pages.user_panel.exit'),
+      destroy_user_session_path, method: :delete
+    - if current_user.default_user?
+      li.menu-list 
+        = link_to t('pages.user_panel.edit_profile'),
+          edit_user_registration_path
+    - else 
+      li.menu-list
+        = link_to t('pages.user_panel.admin_panel'),
+          admin_root_path
+  - else 
+    li.menu-list 
+      = link_to  t('pages.user_panel.sign_in'),
+        new_user_session_path
+    li.menu-list
+      = link_to t('pages.user_panel.registration'),
+        new_user_registration_path

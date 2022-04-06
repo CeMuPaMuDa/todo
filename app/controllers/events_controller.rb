@@ -3,6 +3,7 @@
 class EventsController < ApplicationController
   before_action :set_event, only: %i[show edit update destroy]
   before_action :authenticate_user!
+  before_action :add_index_breadcrumb, only: %i[show edit new]
 
   # GET /events
   def index
@@ -12,16 +13,20 @@ class EventsController < ApplicationController
   # GET /events/1
   def show
     authorize @event
+    add_breadcrumb "Event: #{@event.title}", event_path
   end
 
   # GET /events/new
   def new
     @event = Event.new
+    add_breadcrumb 'New', new_event_path
   end
 
   # GET /events/1/edit
   def edit
     authorize @event
+    add_breadcrumb "Event: #{@event.title}", event_path(@event)
+    add_breadcrumb 'Edit', edit_event_path
   end
 
   # POST /events
@@ -62,5 +67,9 @@ class EventsController < ApplicationController
   # Only allow a list of trusted parameters through.
   def event_params
     params.require(:event).permit(:title, :description, :completed)
+  end
+
+  def add_index_breadcrumb
+    add_breadcrumb 'Events', events_path
   end
 end

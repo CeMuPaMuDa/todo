@@ -1,0 +1,14 @@
+h1 Listing items
+table.table.table-dark.table-striped
+  - @items.each do |item|
+    tr
+      td= item.event.title.truncate(20)
+      td= item.title
+      td= item.description.truncate(50)
+      td= item.completed
+      td= item.deadline
+      td= link_to 'Show', [item.event, item]
+      td= link_to 'Edit', edit_event_item_path(item.event, item)
+      td= link_to 'Destroy', [item.event, item], method: :delete,data: { confirm: 'Are you sure?' }  
+br
+= link_to 'New Item', new_event_item_path(params[:event_id])

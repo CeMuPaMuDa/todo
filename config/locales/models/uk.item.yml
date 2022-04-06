@@ -1,0 +1,12 @@
+uk:
+  activerecord:
+    models:
+      item: Підзавдання 
+    attributes:
+      item:
+        title: Назва
+        description: Опис
+        completed: Завершене
+        deadline: Кінцевий термін
+        created_at: Створене
+        updated_at: Змінене

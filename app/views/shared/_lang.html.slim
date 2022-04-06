@@ -1,0 +1,11 @@
+.w3-dropdown-hover
+  button.w3-button.w3-orange = t I18n.locale
+  .w3-dropdown-content.w3-bar-block.w3-border
+      - I18n.available_locales.each do |locale|
+        - if I18n.locale == locale
+          = tag.span t(locale), class: 'w3-bar-item w3-button'
+        - else
+          = link_to t(locale), url_for(locale: locale),
+            class: 'w3-bar-item w3-button'
+
+

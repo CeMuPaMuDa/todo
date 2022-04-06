@@ -1,0 +1,11 @@
+h1.fs-1.text-center.text-info.bg-dark
+  = t('text.header.roles_list')
+
+table.table.table-dark.table-striped
+  tbody
+    = render partial: 'role', collection: @admin_roles
+
+
+br
+p.btn.btn-success
+  = link_to 'New Role', new_admin_role_path, class: 'link-warning'

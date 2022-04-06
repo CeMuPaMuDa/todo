@@ -13,7 +13,7 @@ class CreateItems < ActiveRecord::Migration[6.1]
       t.datetime :deadline,
                  comment: 'Дата и время завершения (по плану)'
       t.references :event, foreign_key: true,
-                   comment: 'Внешний ключ для связи с таблицей events'
+                           comment: 'Внешний ключ для связи с таблицей events'
       t.timestamps
     end
   end

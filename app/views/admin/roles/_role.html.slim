@@ -1,0 +1,9 @@
+tr
+  td = role.name
+  td = role.alias_name
+  td
+    button.btn.btn-primary type="button"
+      = link_to t('links.show'), admin_role_path(role), class: 'link-warning'
+  td
+    button.btn.btn-warning type="button"
+      = link_to 'Edit', edit_admin_role_path(role), class: 'link-info'

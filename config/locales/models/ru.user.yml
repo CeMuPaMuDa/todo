@@ -1,0 +1,10 @@
+ru:
+  activerecord:
+    models:
+      user: Пользователь
+    attributes:
+      user:
+        name: Имя
+        email: E-mail
+        created_at: Создан
+        updated_at: Изменен

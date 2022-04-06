@@ -1,0 +1,4 @@
+Подходит крайний срок выполнения следующих дел:
+<% @events.each do |event| %>
+  <%= link_to truncate(event.title), events_url(event) %>
+<% end %>

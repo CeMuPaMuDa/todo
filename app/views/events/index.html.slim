@@ -1,21 +1,13 @@
-h1.fs-1.text-center.text-info.bg-dark Listing events
-
+h1.fs-1.text-center.text-info.bg-dark
+  = t('text.header.events_list')
 table.table.table-dark.table-striped
   tbody
-    - @events.each do |event|
-      tr
-        td 
-          p.badge.rounded-pill.bg-warning.text-dark
-            => event.items.size
-        td =< link_to event.title.truncate(80), event, class: 'link-info'
-        td
-          p.btn.btn-warning
-            =< link_to 'Edit', edit_event_path(event), class: 'link-info'
+    = render partial: 'event', collection: @events
 br
 ul.flex_page.pagination.justify-content-start
   li.page-item
   = paginate @events, class: 'page-link'
 br
 p.btn.btn-success
-  = link_to 'New Event', new_event_path, class: 'link-warning'
+  = link_to t('links.new'), new_event_path, class: 'link-warning'
 

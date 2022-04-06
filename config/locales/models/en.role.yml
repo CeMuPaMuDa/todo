@@ -1,0 +1,10 @@
+en:
+  activerecord:
+    models:
+      role: Role
+    attributes:
+      role:
+        name: name
+        alias_name: Short name
+        created_at: Created at
+        updated_at: Updated at

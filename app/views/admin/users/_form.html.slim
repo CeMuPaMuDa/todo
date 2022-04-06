@@ -1,26 +1,17 @@
-= form_for [:admin, @admin_user] do |f|
+= bootstrap_form_for [:admin, @admin_user] do |f|
   - if @admin_user.errors.any?
     #error_explanation
       h2 = "#{pluralize(@admin_user.errors.count, 'error')} prohibited this admin_user from being saved:"
       ul
         - @admin_user.errors.full_messages.each do |message|
           li = message
-  .field
-    = f.label :name
+  = f.text_field :name, autofocus: true
+  = f.email_field :email
+  = f.password_field :password
+  = f.password_field :password_confirmation
     br
-    = f.text_field :name, autofocus: true
-  .field
-    = f.label :email
-    br
-    = f.email_field :email
-  .field
-    = f.label :password
-    br
-    = f.password_field :password
-  .field
-    = f.label :password_confirmation
-    br
-    = f.password_field :password_confirmation
+  - unless @admin_user.id == current_user.id  
+    = f.collection_select :role_id, Role.order(:name), :id, :name
     br
   .actions
-    = f.submit
+    = f.submit class: 'btn btn-success'

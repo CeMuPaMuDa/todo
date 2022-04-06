@@ -8,10 +8,15 @@ html
     = csp_meta_tag
     = stylesheet_link_tag 'application', media: 'all'
     = javascript_pack_tag 'application'
-  body
-    .wrapper
-      = render 'shared/header'
-      main
-        = yield
-      footer
-        p &copy; All rights reserved
+  body.admin
+    .container-fluid.admin_wrapper
+      header.admin_header
+        = render 'shared/admin/logo'
+        = render 'shared/admin/navbar'
+      .admin_breadcrumbs 
+        = render_breadcrumbs :separator => ' / '  
+      .admin_main
+        .admin_sidebar
+          = render 'shared/admin/sidebar'
+        .admin_content
+          = yield

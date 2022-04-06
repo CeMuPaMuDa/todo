@@ -1,0 +1,7 @@
+ru:
+  text:
+    header:
+      events_list: Список событий
+      event_edit: Редактирование события
+  links:
+    new: Создать событие

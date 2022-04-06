@@ -1,16 +1,15 @@
-h1 Listing admin_users
+h1.fs-1.text-center.text-info.bg-dark
+  = t('text.header.users_list')
 
-table
+table.table.table-dark.table-striped
   tbody
-    - @admin_users.each do |user|
-      tr
-        td = user.name
-        td = user.email
-        td = user.role.name
-        td = link_to 'Show', admin_user_path(user)
-        td = link_to 'Edit', edit_admin_user_path(user)
-        td = link_to 'Destroy', admin_user_path(user), data: { confirm: 'Are you sure?' }, method: :delete
+    = render partial: 'user', collection: @admin_users
 
 br
-
-= link_to 'New User', new_admin_user_path
+br
+ul.flex_page.pagination.justify-content-start
+  li.page-item
+  = paginate @admin_users, class: 'page-link'
+br
+p.btn.btn-success
+  = link_to 'New User', new_admin_user_path, class: 'link-warning'

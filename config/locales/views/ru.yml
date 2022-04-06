@@ -1,0 +1,18 @@
+ru:
+  en: English
+  ru: Русский
+  uk: Українська
+  copy: 'Все права защищены'
+  pages:
+    user_panel:
+      hello: Приветствую
+      exit: Выход
+      sign_in: Войти
+      registration: Зарегистрироваться
+      admin_panel: Панель администратора
+      edit_profile: Редактировать профиль
+  links:
+    show: Просмотреть
+    edit: Редактировать
+    destroy: Удалить
+    back: Назад
