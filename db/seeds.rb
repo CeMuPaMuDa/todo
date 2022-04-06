@@ -37,7 +37,7 @@ hash_events = Array.new(42) do
   {
     title: FFaker::CheesyLingo.title,
     description: FFaker::Lorem.paragraph,
-    deadline: (Time.zone.now + rand(1..15).day),
+    deadline: (Time.zone.now + rand(-15..15).day),
     user: users.sample
   }
 end
