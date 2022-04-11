@@ -1,7 +1,8 @@
 # frozen_string_literal: true
-
+require 'resque/server'
 Rails.application.routes.draw do
   mount RootApi => '/'
+  mount Resque::Server.new, at: '/resque'
   scope '(:locale)' do
     namespace :admin do
       resources :roles
