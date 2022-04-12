@@ -333,6 +333,9 @@ GEM
       connection_pool (>= 2.2.2)
       rack (~> 2.0)
       redis (>= 4.2.0)
+    sidekiq-cron (1.3.0)
+      fugit (>= 1.1)
+      sidekiq (>= 4.2.1)
     sinatra (2.2.0)
       mustermann (~> 1.0)
       rack (~> 2.2)
@@ -417,6 +420,7 @@ DEPENDENCIES
   rubocop-rails
   sass-rails (>= 6)
   sidekiq
+  sidekiq-cron
   slim-rails
   w3css_rails (~> 4.0)
   web-console (>= 4.1.0)
