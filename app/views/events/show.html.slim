@@ -3,8 +3,12 @@ p#notice = notice
   .card-body
     h5.card-title.fs-1.text-info
       = @event.title
-    p.card-text.fs-3
+    p.card-text.fs-2
       = @event.description
+    p.card-text.fs-3.text-light
+      = @event.deadline
+    p.card-text.fs-3.text-light
+      = @event.completed
     p
       strong.fs-4.text-info Items:
       ol

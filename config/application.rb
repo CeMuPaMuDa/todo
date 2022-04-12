@@ -22,6 +22,8 @@ module Todo
     config.paths.add Rails.root.join('lib').to_s, eager_load: true
     config.paths.add Rails.root.join('app/api/helpers').to_s, eager_load: true
     config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.yml')]
+    # config.active_job.queue_adapter = :resque
+    config.active_job.queue_adapter = :sidekiq
     config.generators do |g|
       g.orm              :active_record
       g.template_engine  :slim

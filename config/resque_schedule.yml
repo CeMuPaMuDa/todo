@@ -1,0 +1,12 @@
+queue_close_event:
+  cron: 50 17 * * *
+  class: CloseExpiredEventsJob
+  args:
+  queue: default
+  description: test
+queue_user_deadlines:
+  cron: 55 7,21 * * *
+  class: UserDeadlinesJob
+  args:
+  queue: default
+  description: test
