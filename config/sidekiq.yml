@@ -1,0 +1,8 @@
+close_event:
+  cron: 50 17 * * * 
+  class: CloseExpiredEventsJob
+  queue: default
+user_deadlines:
+  cron: 55 7,21 * * *
+  class: UserDeadlinesJob
+  queue: default
