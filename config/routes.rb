@@ -2,7 +2,9 @@
 require 'resque/server'
 Rails.application.routes.draw do
   mount RootApi => '/'
-  mount Resque::Server.new, at: '/resque'
+  authenticate :user, -> (u) {u.admin?} do
+    mount Resque::Server.new, at: '/jobs'
+  end
   scope '(:locale)' do
     namespace :admin do
       resources :roles
