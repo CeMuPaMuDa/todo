@@ -7,6 +7,8 @@
 # Ignore bundler config.
 /.bundle
 .env
+*.pid
+
 
 # Ignore all logfiles and tempfiles.
 /log/*
@@ -37,3 +39,9 @@ node_modules
 config/settings.local.yml
 config/settings/*.local.yml
 config/environments/*.local.yml
+
+/storage/*
+!/storage/.keep
+/tmp/storage/*
+!/tmp/storage/
+!/tmp/storage/.keep
