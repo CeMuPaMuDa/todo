@@ -37,7 +37,17 @@ RSpec.describe User, type: :model do
   before do
     Role.create(name: 'Пользователь', alias_name: :default_user)
   end
+
+  let(:user) { User.new(name: FFaker::Internet.user_name[0...16]) }
+
   it 'is valid with valid attributes' do
-    expect(User.new).to be_valid
+    expect(user).to be_valid
+  end
+  it 'is not valid with too short name' do
+    expect(User.new(name: 'a')).to_not be_valid
+  end
+
+  it 'is not valid with too long name' do
+    expect(User.new(name: 'a' * 17)).to_not be_valid
   end
 end

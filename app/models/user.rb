@@ -37,22 +37,24 @@ class User < ApplicationRecord
   # include Rolable
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable,
-         :trackable
+  # devise :database_authenticatable, :registerable,
+  #        :recoverable, :rememberable, :validatable,
+  #        :trackable
 
   belongs_to :role
   has_many :events, dependent: :destroy
   has_many :items, through: :events
 
   before_validation :set_role, on: %i[create update]
+  before_validation :normalize_name, on: :create
+  before_validation :normalize_email, if: Proc.new { |u| u.email.present? }
 
   before_save :ensure_authentication_token
 
   validates :name, presence: true
   validates :name, length: { maximum: 16, minimum: 2 }
   validates :name, uniqueness: true
-  validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }
+  # validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }
 
   # act_as_rolable
   # Role.find_each do |role|
