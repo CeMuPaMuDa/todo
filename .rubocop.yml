@@ -1,6 +1,7 @@
 require:
   - rubocop-performance
   - rubocop-rails
+  - rubocop-rspec
 AllCops:
   TargetRubyVersion: 3.0
   Exclude:
@@ -16,6 +17,10 @@ Style/AsciiComments:
   Enabled: false
 Style/Documentation:
   Enabled: false
+RSpec/ContextWording:
+  Enabled: false
+RSpec/MultipleExpectations:
+  Max: 10
 Naming/MethodParameterName:
   Enabled: false
 Naming/PredicateName:

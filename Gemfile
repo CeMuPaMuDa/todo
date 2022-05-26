@@ -39,9 +39,12 @@ gem 'webpacker', '~> 5.0'
 gem 'whenever', require: false
 
 group :development, :test do
+  gem 'factory_bot_rails'
   gem 'ffaker', '~> 2.20'
   gem 'letter_opener'
   gem 'rspec-rails'
+  gem 'shoulda-matchers'
+  gem 'simplecov', require: false
 end
 
 group :development do
@@ -51,5 +54,6 @@ group :development do
   gem 'rubocop', require: false
   gem 'rubocop-performance', require: false
   gem 'rubocop-rails', require: false
+  gem 'rubocop-rspec'
   gem 'web-console', '>= 4.1.0'
 end

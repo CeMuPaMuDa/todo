@@ -99,6 +99,7 @@ GEM
     devise-i18n (1.10.2)
       devise (>= 4.8.0)
     diff-lcs (1.5.0)
+    docile (1.4.0)
     dotenv (2.7.6)
     dotenv-rails (2.7.6)
       dotenv (= 2.7.6)
@@ -139,6 +140,11 @@ GEM
     et-orbi (1.2.7)
       tzinfo
     execjs (2.8.1)
+    factory_bot (6.2.1)
+      activesupport (>= 5.0.0)
+    factory_bot_rails (6.2.0)
+      factory_bot (~> 6.2.0)
+      railties (>= 5.0.0)
     ffaker (2.21.0)
     ffi (1.15.5)
     font_awesome5_rails (1.5.0)
@@ -336,6 +342,8 @@ GEM
       activesupport (>= 4.2.0)
       rack (>= 1.1)
       rubocop (>= 1.7.0, < 2.0)
+    rubocop-rspec (2.11.1)
+      rubocop (~> 1.19)
     ruby-progressbar (1.11.0)
     ruby-vips (2.1.4)
       ffi (~> 1.12)
@@ -353,6 +361,8 @@ GEM
       sprockets-rails
       tilt
     semantic_range (3.0.0)
+    shoulda-matchers (5.1.0)
+      activesupport (>= 5.2.0)
     sidekiq (6.4.2)
       connection_pool (>= 2.2.2)
       rack (~> 2.0)
@@ -360,6 +370,12 @@ GEM
     sidekiq-cron (1.4.0)
       fugit (~> 1)
       sidekiq (>= 4.2.1)
+    simplecov (0.21.2)
+      docile (~> 1.1)
+      simplecov-html (~> 0.11)
+      simplecov_json_formatter (~> 0.1)
+    simplecov-html (0.12.3)
+    simplecov_json_formatter (0.1.4)
     sinatra (2.2.0)
       mustermann (~> 1.0)
       rack (~> 2.2)
@@ -418,6 +434,7 @@ DEPENDENCIES
   devise (~> 4.8, >= 4.8.1)
   devise-i18n (~> 1.10, >= 1.10.1)
   dotenv-rails
+  factory_bot_rails
   ffaker (~> 2.20)
   font_awesome5_rails
   grape
@@ -444,9 +461,12 @@ DEPENDENCIES
   rubocop
   rubocop-performance
   rubocop-rails
+  rubocop-rspec
   sass-rails (>= 6)
+  shoulda-matchers
   sidekiq
   sidekiq-cron
+  simplecov
   slim-rails
   w3css_rails (~> 4.0)
   web-console (>= 4.1.0)

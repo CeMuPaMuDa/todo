@@ -47,7 +47,7 @@ class User < ApplicationRecord
 
   before_validation :set_role, on: %i[create update]
   before_validation :normalize_name, on: :create
-  before_validation :normalize_email, if: Proc.new { |u| u.email.present? }
+  before_validation :normalize_email, if: proc { |u| u.email.present? }
 
   before_save :ensure_authentication_token
 
@@ -75,6 +75,7 @@ class User < ApplicationRecord
       break token unless User.where(authentication_token: token).first
     end
   end
+
   def normalize_email
     self.email = email&.downcase
   end

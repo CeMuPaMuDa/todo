@@ -34,20 +34,11 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  before do
-    Role.create(name: 'Пользователь', alias_name: :default_user)
-  end
+  subject { build(:user) }
 
-  let(:user) { User.new(name: FFaker::Internet.user_name[0...16]) }
-
-  it 'is valid with valid attributes' do
-    expect(user).to be_valid
-  end
-  it 'is not valid with too short name' do
-    expect(User.new(name: 'a')).to_not be_valid
-  end
-
-  it 'is not valid with too long name' do
-    expect(User.new(name: 'a' * 17)).to_not be_valid
-  end
+  it { is_expected.to validate_presence_of(:name) }
+  it { is_expected.to validate_length_of(:name).is_at_least(2) }
+  it { is_expected.to validate_length_of(:name).is_at_most(16) }
+  it { is_expected.to belong_to(:role) }
+  it { is_expected.to have_many(:events).dependent(:destroy) }
 end
