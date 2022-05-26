@@ -3,6 +3,7 @@ FactoryBot.define do
     sequence(:name) { |n| FFaker::Internet.user_name[2...16] + n.to_s }
     sequence(:email) { |n| "person#{n}@example.com" }
     active { true }
+    password { 'some_password' }
     role { create(:role) }
   end
 end
