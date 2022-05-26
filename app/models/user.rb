@@ -34,7 +34,7 @@
 #  fk_rails_...  (role_id => roles.id)
 #
 class User < ApplicationRecord
-  include Rolable
+  # include Rolable
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -43,6 +43,7 @@ class User < ApplicationRecord
 
   belongs_to :role
   has_many :events, dependent: :destroy
+  has_many :items, through: :events
 
   before_validation :set_role, on: %i[create update]
 
@@ -53,7 +54,12 @@ class User < ApplicationRecord
   validates :name, uniqueness: true
   validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }
 
-  act_as_rolable
+  # act_as_rolable
+  # Role.find_each do |role|
+  #   define_method "#{role.alias_name}?" do
+  #     role_id == role.id
+  #   end
+  # end
 
   def ensure_authentication_token
     self.authentication_token ||= generate_authentication_token
@@ -66,6 +72,13 @@ class User < ApplicationRecord
       token = Devise.friendly_token
       break token unless User.where(authentication_token: token).first
     end
+  end
+  def normalize_email
+    self.email = email&.downcase
+  end
+
+  def normalize_name
+    self.name = name&.downcase&.titleize
   end
 
   def set_role

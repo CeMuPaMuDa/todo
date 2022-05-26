@@ -28,7 +28,6 @@ gem 'puma', '~> 5.0'
 gem 'pundit'
 gem 'rails', '~> 6.1.4', '>= 6.1.4.1'
 gem 'rails-i18n'
-gem 'rspec-rails'
 gem 'resque'
 gem 'resque-scheduler'
 gem 'sass-rails', '>= 6'
@@ -42,6 +41,7 @@ gem 'whenever', require: false
 group :development, :test do
   gem 'ffaker', '~> 2.20'
   gem 'letter_opener'
+  gem 'rspec-rails'
 end
 
 group :development do
