@@ -31,8 +31,7 @@ class EventsController < ApplicationController
 
   # POST /events
   def create
-    @event = Event.new(event_params)
-    @event.user_id = current_user.id
+    @event = Event.new(event_params.merge(user: current_user))
     if @event.save
       redirect_to @event, notice: 'Event was successfully created.'
     else
@@ -66,7 +65,7 @@ class EventsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def event_params
-    params.require(:event).permit(:title, :description, :completed, :deadline)
+    params.require(:event).permit(:title, :description, :completed, :deadline, :user)
   end
 
   def add_index_breadcrumb
