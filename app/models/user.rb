@@ -54,14 +54,13 @@ class User < ApplicationRecord
   validates :name, presence: true
   validates :name, length: { maximum: 16, minimum: 2 }
   validates :name, uniqueness: true
-  # validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }
+  validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }
 
-  # act_as_rolable
-  # Role.find_each do |role|
-  #   define_method "#{role.alias_name}?" do
-  #     role_id == role.id
-  #   end
-  # end
+  Role.find_each do |role|
+    define_method "#{role.alias_name}?" do
+      role_id == role.id
+    end
+  end
 
   def ensure_authentication_token
     self.authentication_token ||= generate_authentication_token
